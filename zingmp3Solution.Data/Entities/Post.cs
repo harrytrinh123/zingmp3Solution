@@ -11,5 +11,8 @@ namespace zingmp3Solution.Data.Entities
         public string URLPost { get; set; }
         public int UserId { get; set; }
 
+        public List<Comment> Comments { get; set; }
+        public List<LovePost> LovePosts { get; set; }
+
     }
 }

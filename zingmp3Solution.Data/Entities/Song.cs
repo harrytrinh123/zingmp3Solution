@@ -7,9 +7,7 @@ namespace zingmp3Solution.Data.Entities
     public class Song
     {
         public int Id { get; set; }
-        public int SingerId { get; set; }
-        public int PlaylistId { get; set; }
-        public int CategoryId { get; set; }
+        
         public string Name { get; set; }
         public string Lyrics { get; set; }
         public string SongFile { get; set; }
@@ -19,5 +17,13 @@ namespace zingmp3Solution.Data.Entities
         public DateTime CreatedDate { get; set; }
         public string Musician  { get; set; }
 
-}
+        public int PlaylistId { get; set; }
+        public Playlist Playlist { get; set; }
+
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+
+        public Singer Singer { get; set; }
+
+    }
 }
