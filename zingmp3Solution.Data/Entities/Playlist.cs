@@ -11,5 +11,7 @@ namespace zingmp3Solution.Data.Entities
         public bool IsPublic{ get; set; }
         public bool IsRandom{ get; set; }
 
+        public List<Song> Songs { get; set; }
+
     }
 }
