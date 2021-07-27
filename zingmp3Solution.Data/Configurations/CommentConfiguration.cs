@@ -11,8 +11,11 @@ namespace zingmp3Solution.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Comment> builder)
         {
+            builder.ToTable("Comments");
             builder.HasKey(x => x.Id);
-            builder.HasOne(x => x.Post).WithMany(x => x.Comments).HasForeignKey(x => x.PostId);
+            builder.Property(x => x.Id).UseIdentityColumn();
+            builder.HasOne(x => x.Post).WithMany(x => x.Comments).HasForeignKey(x => x.PostId).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(x => x.User).WithMany(x => x.Comments).HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

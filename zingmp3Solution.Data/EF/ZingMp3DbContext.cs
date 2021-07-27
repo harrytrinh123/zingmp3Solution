@@ -16,20 +16,31 @@ namespace zingmp3Solution.Data.EF
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new CommentConfiguration());
+            modelBuilder.ApplyConfiguration(new FollowingConfiguration());
             modelBuilder.ApplyConfiguration(new LovePostConfiguration());
             modelBuilder.ApplyConfiguration(new PlaylistConfiguration());
+            modelBuilder.ApplyConfiguration(new PostConfiguration());
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
             modelBuilder.ApplyConfiguration(new SingerConfiguration());
             modelBuilder.ApplyConfiguration(new SongConfiguration());
+            modelBuilder.ApplyConfiguration(new Song_PlaylistConfiguration());
+            modelBuilder.ApplyConfiguration(new Song_SingerConfiguration());
         }
 
+        public DbSet<User> Users { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Following> Followings { get; set; }
         public DbSet<LovePost> LovePosts { get; set; }
         public DbSet<Playlist> Playlists { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<Singer> Singers { get; set; }
         public DbSet<Song> Songs { get; set; }
+        public DbSet<Song_Playlist> Song_Playlists { get; set; }
+        public DbSet<Song_Singer> Song_Singers { get; set; }
     }
 }

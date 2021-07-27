@@ -11,7 +11,9 @@ namespace zingmp3Solution.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Playlist> builder)
         {
-            throw new NotImplementedException();
+            builder.ToTable("Playlists");
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).UseIdentityColumn();
         }
     }
 }
