@@ -11,10 +11,9 @@ namespace zingmp3Solution.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Song> builder)
         {
+            builder.ToTable("Songs");
             builder.HasKey(x => x.Id);
-            builder.HasOne(x => x.Playlist).WithMany(x => x.Songs).HasForeignKey(x => x.PlaylistId);
-            builder.HasOne(x => x.Category).WithMany(x => x.Songs).HasForeignKey(x => x.CategoryId);
-            builder.HasOne(x => x.Singer).WithOne(x => x.Song).HasForeignKey<Singer>(s => s.SongId);
+            builder.Property(x => x.Id).UseIdentityColumn();
         }
     }
 }

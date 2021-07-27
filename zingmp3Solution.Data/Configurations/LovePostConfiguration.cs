@@ -11,8 +11,9 @@ namespace zingmp3Solution.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<LovePost> builder)
         {
-            builder.HasKey(x => x.Id);
-            builder.HasOne(x => x.Post).WithMany(x => x.LovePosts).HasForeignKey(x => x.PostId);
+            builder.ToTable("LovePosts");
+            builder.HasKey(t => new { t.UserId, t.PostId });
+            builder.HasOne(x => x.Post).WithMany(x => x.LovePosts).HasForeignKey(x => x.PostId).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

@@ -7,13 +7,15 @@ using zingmp3Solution.Data.Entities;
 
 namespace zingmp3Solution.Data.Configurations
 {
-    public class SingerConfiguration : IEntityTypeConfiguration<Singer>
+    class PostConfiguration : IEntityTypeConfiguration<Post>
     {
-        public void Configure(EntityTypeBuilder<Singer> builder)
+        public void Configure(EntityTypeBuilder<Post> builder)
         {
-            builder.ToTable("Singers");
+            builder.ToTable("Posts");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn();
+
+            builder.HasOne(p => p.User).WithMany(u => u.Posts).HasForeignKey(p => p.UserId);
         }
     }
 }

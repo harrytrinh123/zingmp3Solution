@@ -7,11 +7,11 @@ using zingmp3Solution.Data.Entities;
 
 namespace zingmp3Solution.Data.Configurations
 {
-    public class SingerConfiguration : IEntityTypeConfiguration<Singer>
+    class RoleConfiguration : IEntityTypeConfiguration<Role>
     {
-        public void Configure(EntityTypeBuilder<Singer> builder)
+        public void Configure(EntityTypeBuilder<Role> builder)
         {
-            builder.ToTable("Singers");
+            builder.ToTable("Roles");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn();
         }

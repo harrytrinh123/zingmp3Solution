@@ -10,20 +10,23 @@ namespace zingmp3Solution.Data.Entities
         
         public string Name { get; set; }
         public string Lyrics { get; set; }
-        public string SongFile { get; set; }
+        public string SongUrl { get; set; }
         public string SongImage { get; set; }
         public int LoveCount { get; set; }
         public int ListenCount { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Musician  { get; set; }
+        public string Duration { get; set; }
 
-        public int PlaylistId { get; set; }
-        public Playlist Playlist { get; set; }
+        //Relationship
 
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
-        public Singer Singer { get; set; }
+        public List<Song_Singer> Song_Singers { get; set; }
+        public List<Song_Playlist> Song_Playlists { get; set; }
+
+
 
     }
 }
