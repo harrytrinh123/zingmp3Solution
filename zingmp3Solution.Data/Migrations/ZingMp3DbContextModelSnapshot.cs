@@ -189,15 +189,10 @@ namespace zingmp3Solution.Data.Migrations
                     b.Property<bool>("Sex")
                         .HasColumnType("bit");
 
-                    b.Property<int>("SongId")
-                        .HasColumnType("int");
-
                     b.Property<string>("StageName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("SongId");
 
                     b.ToTable("Singers");
                 });
@@ -235,8 +230,8 @@ namespace zingmp3Solution.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("PlaylistId")
-                        .HasColumnType("int");
+                    b.Property<string>("SingersString")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SongImage")
                         .HasColumnType("nvarchar(max)");
@@ -247,8 +242,6 @@ namespace zingmp3Solution.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("PlaylistId");
 
                     b.ToTable("Songs");
                 });
@@ -375,15 +368,6 @@ namespace zingmp3Solution.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("zingmp3Solution.Data.Entities.Singer", b =>
-                {
-                    b.HasOne("zingmp3Solution.Data.Entities.Song", "Song")
-                        .WithMany()
-                        .HasForeignKey("SongId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("zingmp3Solution.Data.Entities.Song", b =>
                 {
                     b.HasOne("zingmp3Solution.Data.Entities.Category", "Category")
@@ -391,10 +375,6 @@ namespace zingmp3Solution.Data.Migrations
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("zingmp3Solution.Data.Entities.Playlist", null)
-                        .WithMany("Songs")
-                        .HasForeignKey("PlaylistId");
                 });
 
             modelBuilder.Entity("zingmp3Solution.Data.Entities.Song_Playlist", b =>
