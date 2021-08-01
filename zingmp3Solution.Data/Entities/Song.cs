@@ -17,6 +17,7 @@ namespace zingmp3Solution.Data.Entities
         public DateTime CreatedDate { get; set; }
         public string Musician  { get; set; }
         public string Duration { get; set; }
+        public string SingersString { get; set; }
 
         //Relationship
 

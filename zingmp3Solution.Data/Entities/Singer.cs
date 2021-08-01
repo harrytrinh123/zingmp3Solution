@@ -14,9 +14,6 @@ namespace zingmp3Solution.Data.Entities
         public string StageName { get; set; }
         public string Introduction { get; set; }
 
-        public int SongId { get; set; }
-        public Song Song { get; set; }
-
         public List<Song_Singer> Song_Singers { get; set; }
     }
 }

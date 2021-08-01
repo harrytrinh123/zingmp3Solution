@@ -36,6 +36,24 @@ namespace zingmp3Solution.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Singers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Dob = table.Column<DateTime>(nullable: false),
+                    Sex = table.Column<bool>(nullable: false),
+                    Avatar = table.Column<string>(nullable: true),
+                    FullName = table.Column<string>(nullable: true),
+                    StageName = table.Column<string>(nullable: true),
+                    Introduction = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Singers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -69,8 +87,8 @@ namespace zingmp3Solution.Data.Migrations
                     CreatedDate = table.Column<DateTime>(nullable: false),
                     Musician = table.Column<string>(nullable: true),
                     Duration = table.Column<string>(nullable: true),
-                    CategoryId = table.Column<int>(nullable: false),
-                    PlaylistId = table.Column<int>(nullable: true)
+                    SingersString = table.Column<string>(nullable: true),
+                    CategoryId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -81,12 +99,6 @@ namespace zingmp3Solution.Data.Migrations
                         principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Songs_Playlists_PlaylistId",
-                        column: x => x.PlaylistId,
-                        principalTable: "Playlists",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -150,31 +162,6 @@ namespace zingmp3Solution.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Singers",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Dob = table.Column<DateTime>(nullable: false),
-                    Sex = table.Column<bool>(nullable: false),
-                    Avatar = table.Column<string>(nullable: true),
-                    FullName = table.Column<string>(nullable: true),
-                    StageName = table.Column<string>(nullable: true),
-                    Introduction = table.Column<string>(nullable: true),
-                    SongId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Singers", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Singers_Songs_SongId",
-                        column: x => x.SongId,
-                        principalTable: "Songs",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Song_Playlists",
                 columns: table => new
                 {
@@ -196,6 +183,30 @@ namespace zingmp3Solution.Data.Migrations
                         principalTable: "Songs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Song_Singers",
+                columns: table => new
+                {
+                    SongId = table.Column<int>(nullable: false),
+                    SingerId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Song_Singers", x => new { x.SongId, x.SingerId });
+                    table.ForeignKey(
+                        name: "FK_Song_Singers_Singers_SingerId",
+                        column: x => x.SingerId,
+                        principalTable: "Singers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Song_Singers_Songs_SongId",
+                        column: x => x.SongId,
+                        principalTable: "Songs",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -249,30 +260,6 @@ namespace zingmp3Solution.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Song_Singers",
-                columns: table => new
-                {
-                    SongId = table.Column<int>(nullable: false),
-                    SingerId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Song_Singers", x => new { x.SongId, x.SingerId });
-                    table.ForeignKey(
-                        name: "FK_Song_Singers_Singers_SingerId",
-                        column: x => x.SingerId,
-                        principalTable: "Singers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Song_Singers_Songs_SongId",
-                        column: x => x.SongId,
-                        principalTable: "Songs",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_PostId",
                 table: "Comments",
@@ -300,11 +287,6 @@ namespace zingmp3Solution.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Singers_SongId",
-                table: "Singers",
-                column: "SongId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Song_Playlists_PlaylistId",
                 table: "Song_Playlists",
                 column: "PlaylistId");
@@ -318,11 +300,6 @@ namespace zingmp3Solution.Data.Migrations
                 name: "IX_Songs_CategoryId",
                 table: "Songs",
                 column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Songs_PlaylistId",
-                table: "Songs",
-                column: "PlaylistId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -349,19 +326,19 @@ namespace zingmp3Solution.Data.Migrations
                 name: "Posts");
 
             migrationBuilder.DropTable(
-                name: "Singers");
+                name: "Playlists");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "Singers");
 
             migrationBuilder.DropTable(
                 name: "Songs");
 
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Playlists");
+                name: "Categories");
         }
     }
 }
