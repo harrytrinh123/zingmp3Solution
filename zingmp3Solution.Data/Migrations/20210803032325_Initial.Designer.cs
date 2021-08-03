@@ -10,7 +10,7 @@ using zingmp3Solution.Data.EF;
 namespace zingmp3Solution.Data.Migrations
 {
     [DbContext(typeof(ZingMp3DbContext))]
-    [Migration("20210801155643_Initial")]
+    [Migration("20210803032325_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -153,8 +153,8 @@ namespace zingmp3Solution.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
