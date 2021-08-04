@@ -14,6 +14,7 @@ namespace zingmp3Solution.Data.Configurations
             builder.ToTable("Roles");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn();
+            builder.Property(x => x.Type).HasMaxLength(5);
         }
     }
 }
