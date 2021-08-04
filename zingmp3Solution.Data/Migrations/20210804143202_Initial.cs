@@ -59,8 +59,10 @@ namespace zingmp3Solution.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(nullable: true),
-                    Password = table.Column<string>(nullable: true),
+                    UserName = table.Column<string>(maxLength: 25, nullable: true),
+                    Password = table.Column<string>(maxLength: 25, nullable: true),
+                    FirstName = table.Column<string>(nullable: true),
+                    Lastname = table.Column<string>(nullable: true),
                     CreatedDate = table.Column<string>(nullable: true),
                     Dob = table.Column<string>(nullable: true),
                     Sex = table.Column<string>(nullable: true),
@@ -146,7 +148,7 @@ namespace zingmp3Solution.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Type = table.Column<string>(nullable: true),
+                    Type = table.Column<string>(maxLength: 5, nullable: true),
                     Description = table.Column<string>(nullable: true),
                     UserId = table.Column<int>(nullable: false)
                 },
