@@ -13,6 +13,17 @@ namespace zingmp3Solution.Data.Configurations
         {
             builder.ToTable("Songs");
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Name).IsRequired().HasMaxLength(200);
+            builder.Property(x => x.Lyrics).HasMaxLength(1000);
+            builder.Property(x => x.SongImage).IsRequired().HasMaxLength(200);
+            builder.Property(x => x.SongUrl).IsRequired().HasMaxLength(200);
+            builder.Property(x => x.LoveCount).HasDefaultValue(0);
+            builder.Property(x => x.ListenCount).HasDefaultValue(0);
+            builder.Property(x => x.CreatedDate).IsRequired();
+            builder.Property(x => x.Musician).HasMaxLength(200);
+            builder.Property(x => x.Duration).HasMaxLength(20);
+            builder.Property(x => x.SingersString).HasMaxLength(200);
+
             builder.Property(x => x.Id).UseIdentityColumn();
         }
     }

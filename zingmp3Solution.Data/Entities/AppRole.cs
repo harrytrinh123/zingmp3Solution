@@ -1,15 +1,13 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace zingmp3Solution.Data.Entities
 {
-    public class Role
+    public class AppRole : IdentityRole<Guid>
     {
-        public int Id { get; set; }
-        public string Type { get; set; }
         public string Description { get; set; }
-        public User User { get; set; }
 
     }
 }
