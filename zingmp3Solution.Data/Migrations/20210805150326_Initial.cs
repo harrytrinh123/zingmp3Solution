@@ -193,7 +193,7 @@ namespace zingmp3Solution.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Content = table.Column<string>(maxLength: 500, nullable: false),
+                    Text = table.Column<string>(maxLength: 500, nullable: false),
                     FilePostUrl = table.Column<string>(nullable: false),
                     UserId = table.Column<Guid>(nullable: false)
                 },
@@ -243,7 +243,7 @@ namespace zingmp3Solution.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Content = table.Column<string>(maxLength: 500, nullable: false),
+                    Text = table.Column<string>(maxLength: 500, nullable: false),
                     PostId = table.Column<int>(nullable: false),
                     UserId = table.Column<Guid>(nullable: false)
                 },
@@ -341,9 +341,9 @@ namespace zingmp3Solution.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "4cfee3f6-e56e-4be2-ba48-174dff1e2ea2", "Administrator role", "admin", "admin" },
-                    { new Guid("50741d25-d3fa-46de-8853-afe9bd461174"), "be9f8a0e-f239-4f71-af07-d9764f7426b3", "Normal user role", "user", "user" },
-                    { new Guid("5af8cad4-1f9e-444a-97f9-5cbcb5ab6117"), "f74c3e9a-2e15-463c-88ea-8e514336dcb0", "Vip user role", "user", "user" }
+                    { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "0b55ab88-1bfd-41fd-95e6-bdf29b72a217", "Administrator role", "admin", "admin" },
+                    { new Guid("50741d25-d3fa-46de-8853-afe9bd461174"), "255d5c64-b80a-4901-8603-6caed7c7753d", "Normal user role", "user", "user" },
+                    { new Guid("5af8cad4-1f9e-444a-97f9-5cbcb5ab6117"), "95f943b3-f16c-454c-baa3-3b953c2978b7", "Vip user role", "user", "user" }
                 });
 
             migrationBuilder.InsertData(
@@ -361,9 +361,9 @@ namespace zingmp3Solution.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "Avatar", "ConcurrencyStamp", "CreatedDate", "Dob", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Sex", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, null, "d367a50f-5269-4ffc-8db2-a43a0c8bcd39", null, new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin.zingmp3@gmail.com", true, "Hoang", "Trinh Quoc", false, null, "admin.zingmp3@gmail.com", "admin", "AQAAAAEAACcQAAAAEF3zF/dJOBw6a43NL8AOD9Ci/PZtdnajgHx8F7ZizqKok98I/41v0Vq3k6Vagq++Kg==", null, false, "", null, false, "admin" },
-                    { new Guid("bf16d629-2b25-4bb4-8f5c-6221d665ea38"), 0, null, "716a1264-eac7-49b8-a63b-2a4ef76295bd", null, new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), "normaluser.zingmp3@gmail.com", true, "Dat", "Nguyen Hong", false, null, "normaluser.zingmp3@gmail.com", "normaluser", "AQAAAAEAACcQAAAAEOdZW4PxPYZwncDBoAATQKjjgwYEUDsesBmO126vhDHupthipvGZxKfUeZ5cmnIHFw==", null, false, "", null, false, "normaluser" },
-                    { new Guid("5317121c-3842-4a4e-b3eb-2c37e9d53142"), 0, null, "5127a500-d595-47ca-8e6a-6cb8ddbf00d0", null, new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), "vipuser.zingmp3@gmail.com", true, "Phuong", "Vo Minh Phuong", false, null, "vipuser.zingmp3@gmail.com", "vipuser", "AQAAAAEAACcQAAAAEOvpHWsl3Gy8/8PCiThQ02LXiTEwG8Z2/1lcJIaCg/XU/tnk1mofG8712Xc8XQU70w==", null, false, "", null, false, "vipuser" }
+                    { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, null, "79690431-3026-403a-ad19-62ed79467be2", null, new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin.zingmp3@gmail.com", true, "Hoang", "Trinh Quoc", false, null, "admin.zingmp3@gmail.com", "admin", "AQAAAAEAACcQAAAAECTDwJhAlo2XF0Mx45SegxJaQR8GrLprpIuPeouMJ/bJG0jxBgbomrAr9vlPtz7SdQ==", null, false, "", null, false, "admin" },
+                    { new Guid("bf16d629-2b25-4bb4-8f5c-6221d665ea38"), 0, null, "f605be71-7f23-441f-aec1-40a7b7d3d190", null, new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), "normaluser.zingmp3@gmail.com", true, "Dat", "Nguyen Hong", false, null, "normaluser.zingmp3@gmail.com", "normaluser", "AQAAAAEAACcQAAAAELXCdp0r430h6lWbJHqYv6XGKm1qn3fOrbfXvKDJCqJpgcoZUGG/s9yNJiCNAQFo9g==", null, false, "", null, false, "normaluser" },
+                    { new Guid("5317121c-3842-4a4e-b3eb-2c37e9d53142"), 0, null, "8423c9d2-8ea5-4e1a-8700-1d6b67821e17", null, new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), "vipuser.zingmp3@gmail.com", true, "Phuong", "Vo Minh Phuong", false, null, "vipuser.zingmp3@gmail.com", "vipuser", "AQAAAAEAACcQAAAAEGAe/ruHpcyg7373AfX6Ik3FFC8OUYuhfdj+Cy8pVJ6U2HCPnGXDjWh1hwI8Hr0muQ==", null, false, "", null, false, "vipuser" }
                 });
 
             migrationBuilder.CreateIndex(

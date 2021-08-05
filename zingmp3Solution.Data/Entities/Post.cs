@@ -7,7 +7,7 @@ namespace zingmp3Solution.Data.Entities
     public class Post
     {
         public int Id { get; set; }
-        public string Content { get; set; }
+        public string Text { get; set; }
         public string FilePostUrl { get; set; }
 
         public Guid UserId { get; set; }

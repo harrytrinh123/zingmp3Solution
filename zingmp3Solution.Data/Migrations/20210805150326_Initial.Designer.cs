@@ -10,7 +10,7 @@ using zingmp3Solution.Data.EF;
 namespace zingmp3Solution.Data.Migrations
 {
     [DbContext(typeof(ZingMp3DbContext))]
-    [Migration("20210805145207_Initial")]
+    [Migration("20210805150326_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -161,7 +161,7 @@ namespace zingmp3Solution.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "4cfee3f6-e56e-4be2-ba48-174dff1e2ea2",
+                            ConcurrencyStamp = "0b55ab88-1bfd-41fd-95e6-bdf29b72a217",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -169,7 +169,7 @@ namespace zingmp3Solution.Data.Migrations
                         new
                         {
                             Id = new Guid("50741d25-d3fa-46de-8853-afe9bd461174"),
-                            ConcurrencyStamp = "be9f8a0e-f239-4f71-af07-d9764f7426b3",
+                            ConcurrencyStamp = "255d5c64-b80a-4901-8603-6caed7c7753d",
                             Description = "Normal user role",
                             Name = "user",
                             NormalizedName = "user"
@@ -177,7 +177,7 @@ namespace zingmp3Solution.Data.Migrations
                         new
                         {
                             Id = new Guid("5af8cad4-1f9e-444a-97f9-5cbcb5ab6117"),
-                            ConcurrencyStamp = "f74c3e9a-2e15-463c-88ea-8e514336dcb0",
+                            ConcurrencyStamp = "95f943b3-f16c-454c-baa3-3b953c2978b7",
                             Description = "Vip user role",
                             Name = "user",
                             NormalizedName = "user"
@@ -263,7 +263,7 @@ namespace zingmp3Solution.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d367a50f-5269-4ffc-8db2-a43a0c8bcd39",
+                            ConcurrencyStamp = "79690431-3026-403a-ad19-62ed79467be2",
                             Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin.zingmp3@gmail.com",
                             EmailConfirmed = true,
@@ -272,7 +272,7 @@ namespace zingmp3Solution.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "admin.zingmp3@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEF3zF/dJOBw6a43NL8AOD9Ci/PZtdnajgHx8F7ZizqKok98I/41v0Vq3k6Vagq++Kg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECTDwJhAlo2XF0Mx45SegxJaQR8GrLprpIuPeouMJ/bJG0jxBgbomrAr9vlPtz7SdQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -282,7 +282,7 @@ namespace zingmp3Solution.Data.Migrations
                         {
                             Id = new Guid("bf16d629-2b25-4bb4-8f5c-6221d665ea38"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "716a1264-eac7-49b8-a63b-2a4ef76295bd",
+                            ConcurrencyStamp = "f605be71-7f23-441f-aec1-40a7b7d3d190",
                             Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "normaluser.zingmp3@gmail.com",
                             EmailConfirmed = true,
@@ -291,7 +291,7 @@ namespace zingmp3Solution.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "normaluser.zingmp3@gmail.com",
                             NormalizedUserName = "normaluser",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOdZW4PxPYZwncDBoAATQKjjgwYEUDsesBmO126vhDHupthipvGZxKfUeZ5cmnIHFw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELXCdp0r430h6lWbJHqYv6XGKm1qn3fOrbfXvKDJCqJpgcoZUGG/s9yNJiCNAQFo9g==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -301,7 +301,7 @@ namespace zingmp3Solution.Data.Migrations
                         {
                             Id = new Guid("5317121c-3842-4a4e-b3eb-2c37e9d53142"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5127a500-d595-47ca-8e6a-6cb8ddbf00d0",
+                            ConcurrencyStamp = "8423c9d2-8ea5-4e1a-8700-1d6b67821e17",
                             Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "vipuser.zingmp3@gmail.com",
                             EmailConfirmed = true,
@@ -310,7 +310,7 @@ namespace zingmp3Solution.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "vipuser.zingmp3@gmail.com",
                             NormalizedUserName = "vipuser",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOvpHWsl3Gy8/8PCiThQ02LXiTEwG8Z2/1lcJIaCg/XU/tnk1mofG8712Xc8XQU70w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGAe/ruHpcyg7373AfX6Ik3FFC8OUYuhfdj+Cy8pVJ6U2HCPnGXDjWh1hwI8Hr0muQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -346,13 +346,13 @@ namespace zingmp3Solution.Data.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Content")
+                    b.Property<int>("PostId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
                         .IsRequired()
                         .HasColumnType("nvarchar(500)")
                         .HasMaxLength(500);
-
-                    b.Property<int>("PostId")
-                        .HasColumnType("int");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -432,14 +432,14 @@ namespace zingmp3Solution.Data.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
-
                     b.Property<string>("FilePostUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
