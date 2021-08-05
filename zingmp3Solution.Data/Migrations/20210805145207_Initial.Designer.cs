@@ -10,7 +10,7 @@ using zingmp3Solution.Data.EF;
 namespace zingmp3Solution.Data.Migrations
 {
     [DbContext(typeof(ZingMp3DbContext))]
-    [Migration("20210805142137_Initial")]
+    [Migration("20210805145207_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -94,6 +94,23 @@ namespace zingmp3Solution.Data.Migrations
                     b.HasKey("UserId", "RoleId");
 
                     b.ToTable("AppUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
+                            RoleId = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc")
+                        },
+                        new
+                        {
+                            UserId = new Guid("bf16d629-2b25-4bb4-8f5c-6221d665ea38"),
+                            RoleId = new Guid("50741d25-d3fa-46de-8853-afe9bd461174")
+                        },
+                        new
+                        {
+                            UserId = new Guid("5317121c-3842-4a4e-b3eb-2c37e9d53142"),
+                            RoleId = new Guid("5af8cad4-1f9e-444a-97f9-5cbcb5ab6117")
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
@@ -139,6 +156,32 @@ namespace zingmp3Solution.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
+                            ConcurrencyStamp = "4cfee3f6-e56e-4be2-ba48-174dff1e2ea2",
+                            Description = "Administrator role",
+                            Name = "admin",
+                            NormalizedName = "admin"
+                        },
+                        new
+                        {
+                            Id = new Guid("50741d25-d3fa-46de-8853-afe9bd461174"),
+                            ConcurrencyStamp = "be9f8a0e-f239-4f71-af07-d9764f7426b3",
+                            Description = "Normal user role",
+                            Name = "user",
+                            NormalizedName = "user"
+                        },
+                        new
+                        {
+                            Id = new Guid("5af8cad4-1f9e-444a-97f9-5cbcb5ab6117"),
+                            ConcurrencyStamp = "f74c3e9a-2e15-463c-88ea-8e514336dcb0",
+                            Description = "Vip user role",
+                            Name = "user",
+                            NormalizedName = "user"
+                        });
                 });
 
             modelBuilder.Entity("zingmp3Solution.Data.Entities.AppUser", b =>
@@ -159,9 +202,8 @@ namespace zingmp3Solution.Data.Migrations
                     b.Property<string>("CreatedDate")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Dob")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("Dob")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -174,7 +216,7 @@ namespace zingmp3Solution.Data.Migrations
                         .HasColumnType("nvarchar(200)")
                         .HasMaxLength(200);
 
-                    b.Property<string>("Lastname")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(200)")
                         .HasMaxLength(200);
@@ -215,6 +257,65 @@ namespace zingmp3Solution.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "d367a50f-5269-4ffc-8db2-a43a0c8bcd39",
+                            Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "admin.zingmp3@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Hoang",
+                            LastName = "Trinh Quoc",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "admin.zingmp3@gmail.com",
+                            NormalizedUserName = "admin",
+                            PasswordHash = "AQAAAAEAACcQAAAAEF3zF/dJOBw6a43NL8AOD9Ci/PZtdnajgHx8F7ZizqKok98I/41v0Vq3k6Vagq++Kg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        },
+                        new
+                        {
+                            Id = new Guid("bf16d629-2b25-4bb4-8f5c-6221d665ea38"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "716a1264-eac7-49b8-a63b-2a4ef76295bd",
+                            Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "normaluser.zingmp3@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Dat",
+                            LastName = "Nguyen Hong",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "normaluser.zingmp3@gmail.com",
+                            NormalizedUserName = "normaluser",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOdZW4PxPYZwncDBoAATQKjjgwYEUDsesBmO126vhDHupthipvGZxKfUeZ5cmnIHFw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "normaluser"
+                        },
+                        new
+                        {
+                            Id = new Guid("5317121c-3842-4a4e-b3eb-2c37e9d53142"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "5127a500-d595-47ca-8e6a-6cb8ddbf00d0",
+                            Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "vipuser.zingmp3@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Phuong",
+                            LastName = "Vo Minh Phuong",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "vipuser.zingmp3@gmail.com",
+                            NormalizedUserName = "vipuser",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOvpHWsl3Gy8/8PCiThQ02LXiTEwG8Z2/1lcJIaCg/XU/tnk1mofG8712Xc8XQU70w==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "vipuser"
+                        });
                 });
 
             modelBuilder.Entity("zingmp3Solution.Data.Entities.Category", b =>

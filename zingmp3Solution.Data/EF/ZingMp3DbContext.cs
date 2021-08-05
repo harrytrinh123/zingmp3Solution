@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using zingmp3Solution.Data.Configurations;
 using zingmp3Solution.Data.Entities;
+using zingmp3Solution.Data.Extensions;
 
 namespace zingmp3Solution.Data.EF
 {
@@ -39,6 +40,9 @@ namespace zingmp3Solution.Data.EF
             modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
             modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
             modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
+
+            //Data seeding
+            modelBuilder.Seed();
         }
 
         public DbSet<Category> Categories { get; set; }
