@@ -14,7 +14,7 @@ namespace zingmp3Solution.Data.Configurations
             builder.ToTable("Posts");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn();
-            builder.Property(x => x.Content).IsRequired().HasMaxLength(500);
+            builder.Property(x => x.Text).IsRequired().HasMaxLength(500);
             builder.Property(x => x.FilePostUrl).IsRequired();
             builder.HasOne(p => p.User).WithMany(u => u.Posts).HasForeignKey(p => p.UserId);
         }
