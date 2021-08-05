@@ -10,7 +10,7 @@ using zingmp3Solution.Data.EF;
 namespace zingmp3Solution.Data.Migrations
 {
     [DbContext(typeof(ZingMp3DbContext))]
-    [Migration("20210804143202_Initial")]
+    [Migration("20210805022042_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -157,13 +157,7 @@ namespace zingmp3Solution.Data.Migrations
                         .HasColumnType("nvarchar(5)")
                         .HasMaxLength(5);
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
 
                     b.ToTable("Roles");
                 });
@@ -310,6 +304,9 @@ namespace zingmp3Solution.Data.Migrations
                         .HasColumnType("nvarchar(25)")
                         .HasMaxLength(25);
 
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Sex")
                         .HasColumnType("nvarchar(max)");
 
@@ -318,6 +315,9 @@ namespace zingmp3Solution.Data.Migrations
                         .HasMaxLength(25);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RoleId")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });
@@ -370,15 +370,6 @@ namespace zingmp3Solution.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("zingmp3Solution.Data.Entities.Role", b =>
-                {
-                    b.HasOne("zingmp3Solution.Data.Entities.User", "User")
-                        .WithOne("Role")
-                        .HasForeignKey("zingmp3Solution.Data.Entities.Role", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("zingmp3Solution.Data.Entities.Song", b =>
                 {
                     b.HasOne("zingmp3Solution.Data.Entities.Category", "Category")
@@ -415,6 +406,15 @@ namespace zingmp3Solution.Data.Migrations
                         .WithMany("Song_Singers")
                         .HasForeignKey("SongId")
                         .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("zingmp3Solution.Data.Entities.User", b =>
+                {
+                    b.HasOne("zingmp3Solution.Data.Entities.Role", "Role")
+                        .WithOne("User")
+                        .HasForeignKey("zingmp3Solution.Data.Entities.User", "RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

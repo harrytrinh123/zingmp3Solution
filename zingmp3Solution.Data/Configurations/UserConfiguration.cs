@@ -17,7 +17,7 @@ namespace zingmp3Solution.Data.Configurations
             builder.Property(x => x.UserName).HasMaxLength(25);
             builder.Property(x => x.Password).HasMaxLength(25);
 
-            builder.HasOne(u => u.Role).WithOne(r => r.User).HasForeignKey<Role>(r => r.UserId);
+            builder.HasOne(u => u.Role).WithOne(r => r.User).HasForeignKey<User>(r => r.RoleId);
         }
     }
 }
