@@ -13,6 +13,9 @@ namespace zingmp3Solution.Data.Configurations
         {
             builder.ToTable("Playlists");
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Name).IsRequired().HasMaxLength(200);
+            builder.Property(x => x.IsPublic).HasDefaultValue(true);
+            builder.Property(x => x.IsRandom).HasDefaultValue(false);
             builder.Property(x => x.Id).UseIdentityColumn();
         }
     }
