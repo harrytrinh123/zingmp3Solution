@@ -8,9 +8,9 @@ namespace zingmp3Solution.Data.Entities
     public class AppUser : IdentityUser<Guid>
     {
         public string FirstName { get; set; }
-        public string Lastname { get; set; }
+        public string LastName { get; set; }
         public string CreatedDate { get; set; }
-        public string Dob { get; set; }
+        public DateTime Dob { get; set; }
         public string Sex { get; set; }
         public string Avatar { get; set; }
 

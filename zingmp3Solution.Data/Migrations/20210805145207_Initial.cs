@@ -98,9 +98,9 @@ namespace zingmp3Solution.Data.Migrations
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
                     FirstName = table.Column<string>(maxLength: 200, nullable: false),
-                    Lastname = table.Column<string>(maxLength: 200, nullable: false),
+                    LastName = table.Column<string>(maxLength: 200, nullable: false),
                     CreatedDate = table.Column<string>(nullable: true),
-                    Dob = table.Column<string>(nullable: false),
+                    Dob = table.Column<DateTime>(nullable: false),
                     Sex = table.Column<string>(nullable: true),
                     Avatar = table.Column<string>(nullable: true)
                 },
@@ -334,6 +334,36 @@ namespace zingmp3Solution.Data.Migrations
                         principalTable: "Songs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.InsertData(
+                table: "AppRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"), "4cfee3f6-e56e-4be2-ba48-174dff1e2ea2", "Administrator role", "admin", "admin" },
+                    { new Guid("50741d25-d3fa-46de-8853-afe9bd461174"), "be9f8a0e-f239-4f71-af07-d9764f7426b3", "Normal user role", "user", "user" },
+                    { new Guid("5af8cad4-1f9e-444a-97f9-5cbcb5ab6117"), "f74c3e9a-2e15-463c-88ea-8e514336dcb0", "Vip user role", "user", "user" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AppUserRoles",
+                columns: new[] { "UserId", "RoleId" },
+                values: new object[,]
+                {
+                    { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), new Guid("8d04dce2-969a-435d-bba4-df3f325983dc") },
+                    { new Guid("bf16d629-2b25-4bb4-8f5c-6221d665ea38"), new Guid("50741d25-d3fa-46de-8853-afe9bd461174") },
+                    { new Guid("5317121c-3842-4a4e-b3eb-2c37e9d53142"), new Guid("5af8cad4-1f9e-444a-97f9-5cbcb5ab6117") }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AppUsers",
+                columns: new[] { "Id", "AccessFailedCount", "Avatar", "ConcurrencyStamp", "CreatedDate", "Dob", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Sex", "TwoFactorEnabled", "UserName" },
+                values: new object[,]
+                {
+                    { new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"), 0, null, "d367a50f-5269-4ffc-8db2-a43a0c8bcd39", null, new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin.zingmp3@gmail.com", true, "Hoang", "Trinh Quoc", false, null, "admin.zingmp3@gmail.com", "admin", "AQAAAAEAACcQAAAAEF3zF/dJOBw6a43NL8AOD9Ci/PZtdnajgHx8F7ZizqKok98I/41v0Vq3k6Vagq++Kg==", null, false, "", null, false, "admin" },
+                    { new Guid("bf16d629-2b25-4bb4-8f5c-6221d665ea38"), 0, null, "716a1264-eac7-49b8-a63b-2a4ef76295bd", null, new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), "normaluser.zingmp3@gmail.com", true, "Dat", "Nguyen Hong", false, null, "normaluser.zingmp3@gmail.com", "normaluser", "AQAAAAEAACcQAAAAEOdZW4PxPYZwncDBoAATQKjjgwYEUDsesBmO126vhDHupthipvGZxKfUeZ5cmnIHFw==", null, false, "", null, false, "normaluser" },
+                    { new Guid("5317121c-3842-4a4e-b3eb-2c37e9d53142"), 0, null, "5127a500-d595-47ca-8e6a-6cb8ddbf00d0", null, new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), "vipuser.zingmp3@gmail.com", true, "Phuong", "Vo Minh Phuong", false, null, "vipuser.zingmp3@gmail.com", "vipuser", "AQAAAAEAACcQAAAAEOvpHWsl3Gy8/8PCiThQ02LXiTEwG8Z2/1lcJIaCg/XU/tnk1mofG8712Xc8XQU70w==", null, false, "", null, false, "vipuser" }
                 });
 
             migrationBuilder.CreateIndex(
