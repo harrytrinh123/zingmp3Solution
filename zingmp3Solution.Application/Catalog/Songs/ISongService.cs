@@ -16,10 +16,10 @@ namespace zingmp3Solution.Application.Catalog.Songs
         // CRUD
         Task<SongDto> GetSongById(int songId);
         Task<int> Create(SongDto request);
-        Task<int> Update(SongDto request);
+        Task<int> Update(int songId, SongDto request);
         Task<int> Delete(int songId);
-        Task AddLove();
-        Task DeleteLove();
-        Task AddListenCount();
+        Task AddLove(int songId);
+        Task DeleteLove(int songId);
+        Task AddListenCount(int songId);
     }
 }
