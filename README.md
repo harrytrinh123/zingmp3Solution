@@ -12,14 +12,14 @@
 - Visual Studio 2019
 - SQL Server 2019
 ## Requirement
-# zingmp3Solution.Data
+### zingmp3Solution.Data
 - Microsoft.AspNetCore.Identity.EntityFrameworkCore/3.1.1
 - Microsoft.EntityFrameworkCore.Design/3.1.1
 - Microsoft.EntityFrameworkCore.SqlServer/3.1.1
 - Microsoft.EntityFrameworkCore.Tools/3.1.1
 - Microsoft.Extensions.Configuration.FileExtensions/3.1.1
 - Microsoft.Extensions.Configuration.Json/3.1.1
-# zingmp3Solution.WebApi
+### zingmp3Solution.WebApi
 - Swashbuckle.AspNetCore/6.1.5
 ## Diagram
 <img width="432" alt="zingmp3 usecase" src="https://user-images.githubusercontent.com/40319325/126893430-e1a9d45a-d1a8-40a8-bdcd-abcc29e12551.png">
