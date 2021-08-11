@@ -3,16 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zingmp3Solution.WebApp", "zingmp3Solution.WebApp\zingmp3Solution.WebApp.csproj", "{01DBD970-10B5-4562-991C-B67D1F9ADD63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "zingmp3Solution.WebApp", "zingmp3Solution.WebApp\zingmp3Solution.WebApp.csproj", "{01DBD970-10B5-4562-991C-B67D1F9ADD63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zingmp3Solution.Data", "zingmp3Solution.Data\zingmp3Solution.Data.csproj", "{A9FD5D72-FE24-4BC5-A94F-281DF05099EF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zingmp3.Application", "zingmp3.Application\zingmp3.Application.csproj", "{3CBDE80E-C6A3-4CAC-88F9-B0652B89149A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "zingmp3Solution.Data", "zingmp3Solution.Data\zingmp3Solution.Data.csproj", "{A9FD5D72-FE24-4BC5-A94F-281DF05099EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{566B7A67-7863-4B34-BD22-AC53240592DD}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zingmp3Solution.Application", "zingmp3Solution.Application\zingmp3Solution.Application.csproj", "{562B51E4-E3F0-47DC-A3BF-B177FC1B6E66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zingmp3Solution.Dtos", "zingmp3Solution.Dtos\zingmp3Solution.Dtos.csproj", "{860017EF-B398-4879-B551-6119CD980D0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zingmp3Solution.WebApi", "zingmp3Solution.WebApi\zingmp3Solution.WebApi.csproj", "{2082A80F-52DD-48EA-AC62-8913066F62BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +32,18 @@ Global
 		{A9FD5D72-FE24-4BC5-A94F-281DF05099EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9FD5D72-FE24-4BC5-A94F-281DF05099EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9FD5D72-FE24-4BC5-A94F-281DF05099EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3CBDE80E-C6A3-4CAC-88F9-B0652B89149A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3CBDE80E-C6A3-4CAC-88F9-B0652B89149A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3CBDE80E-C6A3-4CAC-88F9-B0652B89149A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3CBDE80E-C6A3-4CAC-88F9-B0652B89149A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{562B51E4-E3F0-47DC-A3BF-B177FC1B6E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{562B51E4-E3F0-47DC-A3BF-B177FC1B6E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{562B51E4-E3F0-47DC-A3BF-B177FC1B6E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{562B51E4-E3F0-47DC-A3BF-B177FC1B6E66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{860017EF-B398-4879-B551-6119CD980D0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{860017EF-B398-4879-B551-6119CD980D0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{860017EF-B398-4879-B551-6119CD980D0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{860017EF-B398-4879-B551-6119CD980D0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2082A80F-52DD-48EA-AC62-8913066F62BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2082A80F-52DD-48EA-AC62-8913066F62BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2082A80F-52DD-48EA-AC62-8913066F62BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2082A80F-52DD-48EA-AC62-8913066F62BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
