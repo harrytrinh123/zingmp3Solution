@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using zingmp3Solution.Data.EF;
+using zingmp3Solution.Data.Entities;
 using zingmp3Solution.Dtos.Catalog.Songs;
 
 namespace zingmp3Solution.Application.Catalog.Songs
@@ -30,10 +31,24 @@ namespace zingmp3Solution.Application.Catalog.Songs
             await _context.SaveChangesAsync();
         }
 
-        public async Task<int> Create(SongDto request)
+        public async Task<int> Create(SongCreateDto request)
         {
-            _context.Add(request);
-            return await _context.SaveChangesAsync();
+            var songPost = new Song()
+            {
+                Name = request.Name,
+                Lyrics = request.Lyrics,
+                SongImage = request.SongImage,
+                SongUrl = request.SongUrl,
+                LoveCount = request.LoveCount,
+                ListenCount = request.ListenCount,
+                CreatedDate = DateTime.Now,
+                Duration = request.Duration,
+                SingersString = request.SingersString,
+                CategoryId = request.CategoryId
+            };
+            _context.Songs.Add(songPost);
+            await _context.SaveChangesAsync();
+            return songPost.Id;
         }
 
         public async Task<int> Delete(int songId)
@@ -47,7 +62,8 @@ namespace zingmp3Solution.Application.Catalog.Songs
         public async Task DeleteLove(int songId)
         {
             var song = await _context.Songs.FindAsync(songId);
-            song.ListenCount -= 1;
+            if(song.ListenCount > 0)
+                song.ListenCount -= 1;
             await _context.SaveChangesAsync();
         }
 
@@ -154,7 +170,7 @@ namespace zingmp3Solution.Application.Catalog.Songs
             return await query.ToListAsync();
         }
 
-        public async Task<int> Update(int songId,SongDto request)
+        public async Task<int> Update(int songId,SongUpdateDto request)
         {
             var song = await _context.Songs.FindAsync(songId);
             if (song == null) throw new Exception($"Can not find song with id: {songId}");
@@ -164,7 +180,6 @@ namespace zingmp3Solution.Application.Catalog.Songs
             song.SongUrl = request.SongUrl;
             song.LoveCount = request.LoveCount;
             song.ListenCount = request.ListenCount;
-            song.CreatedDate = request.CreatedDate;
             song.Musician = request.Musician;
             song.Duration = request.Duration;
             song.SingersString = request.SingersString;

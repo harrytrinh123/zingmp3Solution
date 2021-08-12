@@ -25,6 +25,7 @@ namespace zingmp3Solution.Data.Configurations
             builder.Property(x => x.SingersString).HasMaxLength(200);
 
             builder.Property(x => x.Id).UseIdentityColumn();
+            builder.HasOne(x => x.Category).WithMany(x => x.Songs).HasForeignKey(x => x.CategoryId);
         }
     }
 }

@@ -21,6 +21,8 @@ namespace zingmp3Solution.WebApi.Controllers
         [HttpGet("top10zingchart")]
         public async Task<IActionResult> GetTop10ZingChart()
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
             var songs = await _songService.GetTop10ZingChart();
             return Ok(songs);
         }
@@ -28,6 +30,8 @@ namespace zingmp3Solution.WebApi.Controllers
         [HttpGet("top100zingchart")]
         public async Task<IActionResult> GetTop100ZingChart()
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
             var songs = await _songService.GetTop100ZingChart();
             return Ok(songs);
         }
@@ -35,6 +39,8 @@ namespace zingmp3Solution.WebApi.Controllers
         [HttpGet("categories/top5/{categoryId}")]
         public async Task<IActionResult> GetTop5OfCategory(int categoryId)
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
             var songs = await _songService.GetTop5OfCategory(categoryId);
             return Ok(songs);
         }
@@ -42,6 +48,8 @@ namespace zingmp3Solution.WebApi.Controllers
         [HttpGet("categories/top30/{categoryId}")]
         public async Task<IActionResult> GetTop3OfCategory(int categoryId)
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
             var songs = await _songService.GetTop5OfCategory(categoryId);
             return Ok(songs);
         }
@@ -49,29 +57,40 @@ namespace zingmp3Solution.WebApi.Controllers
         [HttpGet("{songId}")]
         public async Task<IActionResult> Get(int songId)
         {
+            if (!ModelState.IsValid)
+                return BadRequest();
             var song = await _songService.GetSongById(songId);
             return Ok(song);
         }
 
         [HttpPost()]
-        public async Task<IActionResult> Create([FromForm] SongDto request)
+        public async Task<IActionResult> Create([FromForm] SongCreateDto request)
         {
-            var song = await _songService.Create(request);
+            if (!ModelState.IsValid)
+                return BadRequest();
+            var songId = await _songService.Create(request);
+            var song = await _songService.GetSongById(songId);
             return Ok(song);
         }
 
         [HttpPost("{songId}")]
-        public async Task<IActionResult> Update(int songId, [FromForm] SongDto request)
+        public async Task<IActionResult> Update(int songId, [FromForm] SongUpdateDto request)
         {
-            var song = await _songService.Update(songId, request);
-            return Ok(song);
+            if (!ModelState.IsValid)
+                return BadRequest();
+            var result = await _songService.Update(songId, request);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
         }
 
         [HttpDelete("{songId}")]
         public async Task<IActionResult> Delete(int songId)
         {
-            var song = await _songService.Delete(songId);
-            return Ok(song);
+            var result = await _songService.Delete(songId);
+            if (result == 0)
+                return BadRequest();
+            return Ok();
         }
 
         [HttpPatch("{songId}/addlove")]
