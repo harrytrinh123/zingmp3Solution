@@ -15,8 +15,8 @@ namespace zingmp3Solution.Application.Catalog.Songs
         Task<SongAndCountLove> GetTop3ToShowChart();
         // CRUD
         Task<SongDto> GetSongById(int songId);
-        Task<int> Create(SongDto request);
-        Task<int> Update(int songId, SongDto request);
+        Task<int> Create(SongCreateDto request);
+        Task<int> Update(int songId, SongUpdateDto request);
         Task<int> Delete(int songId);
         Task AddLove(int songId);
         Task DeleteLove(int songId);
