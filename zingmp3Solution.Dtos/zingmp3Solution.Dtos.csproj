@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\zingmp3Solution.Data\zingmp3Solution.Data.csproj" />
+  </ItemGroup>
+
 </Project>

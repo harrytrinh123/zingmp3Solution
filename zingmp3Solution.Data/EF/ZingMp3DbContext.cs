@@ -55,5 +55,6 @@ namespace zingmp3Solution.Data.EF
         public DbSet<Song> Songs { get; set; }
         public DbSet<Song_Playlist> Song_Playlists { get; set; }
         public DbSet<Song_Singer> Song_Singers { get; set; }
+        public object AppRoles { get; set; }
     }
 }
