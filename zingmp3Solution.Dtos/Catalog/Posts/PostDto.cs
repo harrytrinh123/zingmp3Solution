@@ -9,5 +9,6 @@ namespace zingmp3Solution.Dtos.Catalog.Posts
         public int Id { get; set; }
         public string Text { get; set; }
         public string FilePostUrl { get; set; }
+        public Guid UserId { get; set; }
     }
 }
