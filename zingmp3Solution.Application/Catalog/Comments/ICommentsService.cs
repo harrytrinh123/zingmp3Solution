@@ -10,8 +10,8 @@ namespace zingmp3Solution.Application.Catalog.Comments
     {
         Task<List<CommentsDto>> GetComment();
         Task<CommentsDto> GetCommentsByID(int id);
-        Task AddComment(CommentsDto comments);
+        Task<CommentsDto> AddComment(Guid UserId, int PostId , CommentCreateDto comments);
         Task DeleteComment(CommentsDto comments);
-        Task<CommentsDto> EditComment();
+        Task<CommentsDto> EditComment(int id, CommentUpdateDto comment);
     }
 }

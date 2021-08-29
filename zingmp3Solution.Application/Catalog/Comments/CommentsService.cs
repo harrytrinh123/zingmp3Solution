@@ -18,32 +18,51 @@ namespace zingmp3Solution.Application.Catalog.Comments
             _context = context;
         }
 
-        public async Task AddComment(CommentsDto comments)
+        public async Task<CommentsDto> AddComment(Guid UserId, int PostId, CommentCreateDto comments)
         {
             var commetCurrent = new Comment()
             {
-                Id = comments.Id,
                 Text = comments.Text,
-                PostId = comments.Id,
-                UserId = comments.UserId
+                PostId = PostId,
+                UserId = UserId
             };
             _context.Comments.Add(commetCurrent);
             await _context.SaveChangesAsync();
+
+            return new CommentsDto()
+            {
+                Id = commetCurrent.Id,
+                Text = commetCurrent.Text,
+                PostId = commetCurrent.PostId,
+                UserId = commetCurrent.UserId
+            };
         }
 
         public async Task DeleteComment(CommentsDto comments)
         {
             var commentCurrent = await _context.Comments.FindAsync(comments.Id);
-            if(commentCurrent != null)
+            if (commentCurrent != null)
             {
                 _context.Remove(commentCurrent);
                 await _context.SaveChangesAsync();
             }
         }
 
-        public Task<CommentsDto> EditComment()
+        public async Task<CommentsDto> EditComment(int id, CommentUpdateDto comment)
         {
-            throw new NotImplementedException();
+            var commentCurrent = await _context.Comments.FindAsync(id);
+            if (commentCurrent == null) throw new Exception($"Not found {id} in comment");
+            commentCurrent.Text = comment.Text;
+            commentCurrent.PostId = comment.PostId;
+            commentCurrent.UserId = comment.UserId;
+            _context.Comments.Update(commentCurrent);
+            await _context.SaveChangesAsync();
+            return new CommentsDto() { 
+                Id = id,
+                Text = commentCurrent.Text,
+                PostId = commentCurrent.PostId,
+                UserId = commentCurrent.UserId
+            };
         }
 
         public async Task<List<CommentsDto>> GetComment()

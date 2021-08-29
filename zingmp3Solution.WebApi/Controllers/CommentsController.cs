@@ -30,7 +30,7 @@ namespace zingmp3Solution.WebApi.Controllers
         public async Task<IActionResult> GetCommentsByID(int id)
         {
             var comment = await _comment.GetCommentsByID(id);
-            if(comment != null)
+            if (comment != null)
             {
                 return Ok(comment);
             }
@@ -38,11 +38,11 @@ namespace zingmp3Solution.WebApi.Controllers
             return NotFound($"Id {id} not list Comments");
         }
 
-        [HttpPost]
-        public async Task<IActionResult> AddComment(CommentsDto comments)
+        [HttpPost()]
+        public async Task<IActionResult> AddComment(Guid UserId, int PostId, [FromForm] CommentCreateDto comments)
         {
-            await _comment.AddComment(comments);
-            return Ok(comments);
+            var comment = await _comment.AddComment(UserId, PostId, comments);
+            return Ok(comment);
         }
 
         [HttpDelete]
@@ -50,6 +50,14 @@ namespace zingmp3Solution.WebApi.Controllers
         {
             await _comment.DeleteComment(comments);
             return Ok(comments);
+        }
+
+        [HttpPatch]
+        [Route("/api/[controller]/{id}")]
+        public async Task<IActionResult> UpdateComment(int id, CommentUpdateDto comment)
+        {
+            var commentCurrent = await _comment.EditComment(id, comment);
+            return Ok(commentCurrent);
         }
     }
 }
