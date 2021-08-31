@@ -12,9 +12,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using zingmp3Solution.Application.Catalog.Comments;
+using zingmp3Solution.Application.Catalog.Singers;
 using zingmp3Solution.Application.Catalog.Playlists;
 using zingmp3Solution.Application.Catalog.Songs;
 using zingmp3Solution.Data.EF;
+using zingmp3Solution.Data.Entities;
 
 namespace zingmp3Solution.WebApi
 {
@@ -40,6 +43,9 @@ namespace zingmp3Solution.WebApi
             });
             services.AddTransient<ISongService, SongService>();
             services.AddTransient<IPlaylistService, PlaylistService>();
+
+            services.AddScoped<ISingersService, SingersService>();
+            services.AddScoped<ICommentsService, CommentsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
