@@ -8,4 +8,8 @@
     <ProjectReference Include="..\zingmp3Solution.Data\zingmp3Solution.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.9" />
+  </ItemGroup>
+
 </Project>

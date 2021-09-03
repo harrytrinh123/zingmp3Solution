@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,5 +15,6 @@ namespace zingmp3Solution.Application.Catalog.Posts
         Task<int> Create(PostCreateDto request);
         Task<int> Update(int postId,PostUpdateDto request);
         Task<int> Delete(int postId);
+
     }
 }
