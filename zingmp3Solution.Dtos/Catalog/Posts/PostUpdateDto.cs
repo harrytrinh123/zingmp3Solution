@@ -8,6 +8,7 @@ namespace zingmp3Solution.Dtos.Catalog.Posts
     {
         public string Text { get; set; }
         public string FilePostUrl { get; set; }
+        public IFormFile File { get; set; }
         public Guid UserId { get; set; }
     }
 }

@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using zingmp3Solution.Application.Catalog.Playlists;
+using zingmp3Solution.Application.Catalog.Posts;
 using zingmp3Solution.Application.Catalog.Songs;
 using zingmp3Solution.Data.EF;
 
@@ -38,8 +39,11 @@ namespace zingmp3Solution.WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger Zingmp3", Version = "v1" });
             });
+
+            //Depency injection
             services.AddTransient<ISongService, SongService>();
             services.AddTransient<IPlaylistService, PlaylistService>();
+            services.AddTransient<IPostService, PostService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

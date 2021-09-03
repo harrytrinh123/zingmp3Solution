@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using zingmp3Solution.Data.EF;
 using zingmp3Solution.Data.Entities;
 using zingmp3Solution.Dtos.Catalog.Posts;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace zingmp3Solution.Application.Catalog.Posts
 {
@@ -19,7 +21,7 @@ namespace zingmp3Solution.Application.Catalog.Posts
         {
             var postCreate = new Post()
             {
-                FilePostUrl = request.FilePostUrl,
+                FilePostUrl = "file path",
                 Text = request.Text,
                 UserId = request.UserId
             };
@@ -36,14 +38,27 @@ namespace zingmp3Solution.Application.Catalog.Posts
             return await _context.SaveChangesAsync();
         }
 
-        public Task<List<PostDto>> GetPaged(int pageIndex, int pageSize)
+        public async Task<List<PostDto>> GetPaged(int pageIndex, int pageSize)
         {
-            throw new NotImplementedException();
+            var query = from p in _context.Posts
+                        select p;
+            var posts = await query.Skip((pageIndex - 1) * pageSize)
+                .Take(pageSize)
+                .Select(x => new PostDto()
+                {
+                    Id = x.Id,
+                    FilePostUrl = x.FilePostUrl,
+                    Text = x.Text,
+                    UserId = x.UserId
+
+                }).ToListAsync();
+            return posts;
         }
 
         public async Task<PostDto> GetPostById(int postId)
         {
             var post = await _context.Posts.FindAsync(postId);
+            if (post == null) return null;
             return new PostDto()
             {
                 Id = post.Id,
@@ -62,4 +77,5 @@ namespace zingmp3Solution.Application.Catalog.Posts
             post.UserId = request.UserId;
             return await _context.SaveChangesAsync();
         }
+    }
 }
