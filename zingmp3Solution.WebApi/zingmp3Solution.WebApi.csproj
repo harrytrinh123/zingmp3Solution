@@ -14,5 +14,9 @@
     <ProjectReference Include="..\zingmp3Solution.Dtos\zingmp3Solution.Dtos.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\user-content\" />
+  </ItemGroup>
+
 
 </Project>

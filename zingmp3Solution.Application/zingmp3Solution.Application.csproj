@@ -8,6 +8,8 @@
     <Compile Remove="Common\**" />
     <EmbeddedResource Remove="Common\**" />
     <None Remove="Common\**" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
   <ItemGroup>

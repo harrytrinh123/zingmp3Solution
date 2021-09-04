@@ -17,6 +17,7 @@ using zingmp3Solution.Application.Catalog.Singers;
 using zingmp3Solution.Application.Catalog.Playlists;
 using zingmp3Solution.Application.Catalog.Posts;
 using zingmp3Solution.Application.Catalog.Songs;
+using zingmp3Solution.Application.Common;
 using zingmp3Solution.Data.EF;
 using zingmp3Solution.Data.Entities;
 
@@ -50,6 +51,7 @@ namespace zingmp3Solution.WebApi
             services.AddScoped<ISingersService, SingersService>();
             services.AddScoped<ICommentsService, CommentsService>();
             services.AddTransient<IPostService, PostService>();
+            services.AddTransient<IStorageService, FileStorageService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
