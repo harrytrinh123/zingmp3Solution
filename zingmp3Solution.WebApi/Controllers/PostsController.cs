@@ -28,7 +28,7 @@ namespace zingmp3Solution.WebApi.Controllers
         }
 
         // GET api/<PostsController>/5
-        [HttpGet("{id}")]
+        [HttpGet("{postId}")]
         public async Task<IActionResult> Get(int postId)
         {
             var item = await _postService.GetPostById(postId);
@@ -41,14 +41,20 @@ namespace zingmp3Solution.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromForm]PostCreateDto request)
         {
-            return Ok();
+            var postId = await _postService.Create(request);
+            var post = await _postService.GetPostById(postId);
+            return CreatedAtAction(nameof(Get), new { id = postId }, post);
         }
 
         // PUT api/<PostsController>/5
-        [HttpPut("{id}")]
+        [HttpPut("{postId}")]
         public async Task<IActionResult> Put(int postId, [FromForm] PostUpdateDto request)
         {
-            return Ok();
+            var affedted = await _postService.Update(postId, request);
+            if (affedted == 0)
+                return BadRequest();
+            var item = _postService.GetPostById(postId);
+            return Ok(item);
         }
 
         // DELETE api/<PostsController>/5
