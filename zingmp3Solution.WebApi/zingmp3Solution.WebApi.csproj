@@ -9,13 +9,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\zingmp3Solution.Application\zingmp3Solution.Application.csproj" />
-    <ProjectReference Include="..\zingmp3Solution.Data\zingmp3Solution.Data.csproj" />
-    <ProjectReference Include="..\zingmp3Solution.Dtos\zingmp3Solution.Dtos.csproj" />
+    <Folder Include="wwwroot\user-content\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\user-content\" />
+    <ProjectReference Include="..\zingmp3Solution.Application\zingmp3Solution.Application.csproj" />
+    <ProjectReference Include="..\zingmp3Solution.Data\zingmp3Solution.Data.csproj" />
+    <ProjectReference Include="..\zingmp3Solution.Dtos\zingmp3Solution.Dtos.csproj" />
   </ItemGroup>
 
 
