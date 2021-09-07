@@ -9,5 +9,8 @@ namespace zingmp3Solution.Dtos.Catalog.Playlists
         public string Name { get; set; }
         public bool IsPublic { get; set; }
         public bool IsRandom { get; set; }
+
+        public string Image { get; set; }
+
     }
 }

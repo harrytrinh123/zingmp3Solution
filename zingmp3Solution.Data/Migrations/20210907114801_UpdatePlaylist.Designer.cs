@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using zingmp3Solution.Data.EF;
 
 namespace zingmp3Solution.Data.Migrations
 {
     [DbContext(typeof(ZingMp3DbContext))]
-    partial class ZingMp3DbContextModelSnapshot : ModelSnapshot
+    [Migration("20210907114801_UpdatePlaylist")]
+    partial class UpdatePlaylist
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

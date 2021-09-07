@@ -52,7 +52,7 @@ namespace zingmp3Solution.WebApi.Controllers
             return Ok();
         }
 
-        [HttpPost("{id}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromForm] PlaylistUpdateDto request)
         {
             if (!ModelState.IsValid)

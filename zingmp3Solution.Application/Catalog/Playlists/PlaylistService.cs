@@ -23,7 +23,8 @@ namespace zingmp3Solution.Application.Catalog.Playlists
             {
                 Name = request.Name,
                 IsPublic = request.IsPublic,
-                IsRandom = request.IsRandom
+                IsRandom = request.IsRandom,
+                Image = request.Image
             };
 
             _context.Playlists.Add(playlist);
@@ -52,6 +53,7 @@ namespace zingmp3Solution.Application.Catalog.Playlists
             song.Name = request.Name;
             song.IsPublic = request.IsPublic;
             song.IsRandom = request.IsRandom;
+            song.Image = request.Image;
 
             return await _context.SaveChangesAsync();
         }
