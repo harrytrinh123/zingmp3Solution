@@ -43,7 +43,7 @@ namespace zingmp3Solution.WebApi.Controllers
         {
             var postId = await _postService.Create(request);
             var post = await _postService.GetPostById(postId);
-            return CreatedAtAction(nameof(Get), new { id = postId }, post);
+            return Ok(post);
         }
 
         // PUT api/<PostsController>/5
