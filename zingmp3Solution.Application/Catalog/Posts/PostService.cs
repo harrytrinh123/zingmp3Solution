@@ -48,6 +48,11 @@ namespace zingmp3Solution.Application.Catalog.Posts
         {
             var post = await _context.Posts.FindAsync(postId);
             if (post == null) throw new Exception($"Can not find post with id: {postId}");
+            var comments = from c in _context.Comments
+                           where c.PostId == postId
+                           select c;
+            _context.Comments.RemoveRange(comments);
+
             _context.Remove(post);
             await _storageService.DeleteFileAsync(post.FilePostUrl);
 
@@ -106,7 +111,7 @@ namespace zingmp3Solution.Application.Catalog.Posts
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
             var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
-            return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
+            return fileName;
         }
     }
 }
