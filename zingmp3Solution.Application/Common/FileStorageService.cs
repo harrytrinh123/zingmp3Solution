@@ -32,9 +32,12 @@ namespace zingmp3Solution.Application.Common
         public async Task DeleteFileAsync(string fileName)
         {
             var filePath = Path.Combine(_userContentFolder, fileName);
-            if(File.Exists(filePath)) {
+            if (File.Exists(filePath))
+            {
                 await Task.Run(() => File.Delete(filePath));
             }
+            else
+                throw new Exception("Canot delete file");
         }
     }
 }
