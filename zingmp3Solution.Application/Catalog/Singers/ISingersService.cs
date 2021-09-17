@@ -13,6 +13,6 @@ namespace zingmp3Solution.Application.Catalog.Singers
         Task<Singer> GetSingerByID(int IDSinger);
         Task DeleteSinger(SingerDto singer);
         Task AddSingers(SingerDto singer);
-        Task<SingerDto> EditSinger(SingerDto singer);
+        Task<SingerDto> EditSinger(int id, SingerEdit singer);
     }
 }
