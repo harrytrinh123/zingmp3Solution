@@ -6,20 +6,25 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using zingmp3Solution.WebApp.Models;
+using zingmp3Solution.WebApp.Services;
 
 namespace zingmp3Solution.WebApp.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ISongService _songService;
+        public HomeController(ILogger<HomeController> logger, ISongService songService)
         {
             _logger = logger;
+            _songService = songService;
         }
 
-        public IActionResult Index()
+        [HttpGet("{songId}")]
+        public IActionResult Index(int songId)
         {
+            var song = _songService.Get(songId);
+            ViewData.Model = song;
             return View();
         }
 

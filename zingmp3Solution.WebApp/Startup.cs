@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using zingmp3Solution.WebApp.Services;
 
 namespace zingmp3Solution.WebApp
 {
@@ -24,6 +25,8 @@ namespace zingmp3Solution.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddHttpClient<ISongService, SongService>();
+            services.AddHttpClient();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

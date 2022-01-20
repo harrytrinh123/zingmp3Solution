@@ -6,3 +6,14 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@{
+
+    var song = Model;
+    //Or
+    //Customer customer =ViewData.Model;
+
+    <p>Id :@song.Id </p>
+    <p>Name :@song.Name </p>
+    <p>Name :@song.Lyrics </p>
+}
