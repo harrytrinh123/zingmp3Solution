@@ -1,0 +1,377 @@
+body {
+    line-height: 1.5;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    overflow-x: hidden;
+}
+
+
+/* show */
+
+.contain {
+    background-image: url(../img/a8626a5671f5a01250a074c4c8140cae.jpg);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 721px;
+}
+
+.show {
+    transform: translate(0, 0);
+}
+
+.blur {
+    background-color: rgba(12, 3, 3, 0.8);
+    backdrop-filter: blur(30px);
+    width: 100%;
+    height: 100%;
+}
+
+
+/* nav-show */
+
+.navbar {
+    padding-top: 20px;
+}
+
+.tab {
+    background-color: hsla(0, 0%, 100%, .1);
+    border-radius: 999px;
+    list-style: none;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.tab li {
+    color: white;
+    font-size: 16px;
+    padding: 7px 50px;
+    border-radius: 999px;
+    height: 98%;
+}
+
+.is-active {
+    background-color: hsla(0, 0%, 100%, .1);
+}
+
+.tab-right {
+    position: absolute;
+    top: 17px;
+    right: 10px;
+}
+
+.level-icon {
+    margin-right: 15px;
+}
+
+.icon-right {
+    color: white;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    padding: 8px;
+    border-radius: 999px;
+    width: 50px;
+}
+
+.icon-item {
+    font-size: 18px;
+    color: white;
+    padding: 8px;
+}
+
+.expand {
+    width: 45px;
+    border-right: 1px solid rgb(185, 180, 180);
+}
+
+
+/* content-show */
+
+.main-playlist {
+    margin-top: 40px;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.content-playlist i {
+    color: white;
+}
+
+.play-list {
+    width: 100%;
+    height: 500px;
+}
+
+.slide-show {
+    width: 100%;
+    height: 100%;
+}
+
+.playlist-icon {
+    position: absolute;
+    top: 285px;
+}
+
+.play-icon {
+    color: white;
+    font-size: 80px;
+    padding: 20px;
+}
+
+#start {
+    height: 318px;
+    float: right;
+    margin-right: 46px;
+    margin-top: 96px;
+}
+
+.list-card-item {
+    width: 100%;
+}
+
+.not-active {
+    height: 64%;
+    margin-top: 86px;
+    width: 340px;
+}
+
+.song-singer {
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#bh {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.list-card {
+    padding: 10px;
+    width: 340px;
+}
+
+#active-card {
+    width: 420px;
+}
+
+.playlist-active {
+    top: 245px;
+    left: 620px;
+}
+
+.active-image {
+    width: 100%;
+}
+
+.list-card-start,
+.list-card-end {
+    width: 210px;
+}
+
+.list-card-end .song-singer {
+    width: 300px
+}
+
+#end {
+    width: 340px;
+    height: 318px;
+    margin-top: 96px;
+    margin-left: 45px
+}
+
+
+/* nut slide */
+
+.bar {
+    color: white;
+    padding: 14px;
+    line-height: 0;
+    font-size: 20px;
+}
+
+div#btn-pre {
+    position: absolute;
+    top: 50%;
+    left: 1%;
+}
+
+div#btn-next {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+}
+
+
+/* thanh phat nhac */
+
+footer {
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    background-color: #120c1c;
+}
+
+.content-playlist {
+    padding: 0 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.content-playlist a {
+    color: black;
+    text-decoration: none;
+}
+
+.head {
+    width: 30%;
+}
+
+figure img {
+    height: 100%;
+    width: 100%;
+}
+
+.image {
+    width: 64px;
+    height: 64px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 999px !important;
+}
+
+
+/* quay image */
+
+
+/* figure {
+    animation: fa-spin 10s infinite linear;
+} */
+
+.between {
+    width: 600px;
+}
+
+.control {
+    align-items: center;
+}
+
+.control .btn {
+    margin: 0 7px;
+}
+
+.btn-icon {
+    font-size: 16px;
+}
+
+.icon {
+    font-size: 40px;
+    font-weight: 20px;
+}
+
+.icon:hover {
+    color: #9c32ca;
+}
+
+.time-start,
+.time-end {
+    color: white;
+}
+
+.between .time .time-start {
+    margin-right: 10px;
+    opacity: .5;
+}
+
+.between .time .audio-time {
+    position: relative;
+    width: 100%;
+    height: 15px;
+    margin-top: 7px;
+}
+
+.audio-time:hover .line-time {
+    background-color: #ccc;
+    height: 5px;
+}
+
+.audio-time:hover .line-time::-webkit-slider-thumb {
+    visibility: visible;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+.audio-time:hover .line-progress {
+    height: 5px;
+    cursor: pointer;
+}
+
+.line-time {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 3px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: absolute;
+    cursor: pointer;
+    background-color: #fff
+}
+
+.line-time::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #6b3483;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.line-progress {
+    height: 3px;
+    background: #6b3483;
+    border-radius: 4px;
+    position: absolute;
+}
+
+.time-end {
+    margin-right: 10px;
+}
+
+.tail {
+    width: 30%;
+}
+
+.icon-tail {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.mv {
+    margin-right: 10px;
+}
+
+.karaoke {
+    margin-right: 10px;
+}
+
+.volum {
+    margin: 0px 90px 3px 0px;
+}
+
+#volum {
+    width: 90px;
+}
+
+.list-music {
+    margin-left: 28px;
+}
+
+
+/* SHOW */
+
+
+/* slide show */

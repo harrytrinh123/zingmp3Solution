@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.content {
+    background-color: #1e1e1e;
+}
+
+.title {
+    display: inline;
+    color: #fff;
+
+    width: fit-content;
+    text-transform: capitalize;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 40px !important;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.chart-title button {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid #6b3483;
+    background-color: #6b3483;
+    margin-left: 5px;
+}
+
+.chart-title .fa-play {
+    color: white;
+}
+
+
+/* List song */
+.gach-ngang {
+    padding-left: 8px;
+}
+
+.is-40x40 {
+    width: 40px;
+    height: 40px;
+}
+
+
+.list-song {
+    width: 100%;
+}
+
+.title-wrapper span {
+    line-height: 1.3;
+    text-transform: none;
+    font-weight: 500;
+    display: inline-block;
+    vertical-align: top;
+    color: rgb(219, 217, 217);
+}
+
+.subtitle a {
+    line-height: 1.3;
+    display: block;
+    font-size: 12px;
+    margin-top: 3px;
+    color: hsla(0,0%,100%,0.5);
+}
+
+.card-info {
+    padding-left: 25px;
+    max-width: 200px;
+    padding-left: 20px;
+}
+
+.number {
+    -webkit-text-stroke: 1px #4a90e2;
+    opacity: 1;
+    color: rgba(74,144,226,0);
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
+    padding-left: 10px;
+}
+
+.is-center {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    word-break: normal;
+}
+
+.song-duration {
+    color: hsla(0,0%,100%,0.5);
+    font-size: 12px;
+    word-break: break-word;
+    font-family: 'Inter', sans-serif;
+    display: block;
+    font-weight: 400;
+    max-width: 60%;
+}
+
+.ic-balance {
+    color: rgba(0,0,0,0.6);
+}
+
+.song-thumb {
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.song-thumb img {
+    margin-left: -15px;
+    border-radius: 5px;
+}
+
+.chart-song-item {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-radius: 4px;
+    height: 50px;
+    width: 100%;
+}
+
+/* hover song item */
+.chart-song-item:hover {
+    background-color: hsla(0,0%,100%,.1);
+}
+
+.top-song-item:hover {
+    background-color: hsla(0,0%,100%,0.1);
+}
+
+.top-song-item:hover .zm-actions-container {
+    display: block;
+}
+
+.chart-song-item:hover .zm-actions-container {
+    display: block;
+}
+
+.z-icon {
+    color: hsla(0,0%,100%,0.5);
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.media-right {
+    padding: 15px 0;
+}
+
+button.show-all {
+    border-radius: 999px;
+    border: 1px solid #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.43;
+    text-align: center;
+    color: #fff;
+    background-color: transparent;
+    padding: 8px 25px;
+}
+
+.box-header {
+    margin: 10px 35px;
+    margin-top: -10px;
+
+}
+
+.box-header button {
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+}
+
+.box-header a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700px;
+    line-height: normal;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.zm-btn {
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background-color: #7200a1;
+}
+
+.zm-btn .fas {
+    color: #fff;
+}
+
+.week-chart-section {
+    margin-bottom: 70px;
+}
+
+.week-chart-box {
+    border-radius: 16px;
+    background-color: hsl(0deg 0% 100% / 5%);
+    padding: 20px 10px;
+}
+.section-header {
+    margin: 10px 0;
+}
+
+.section-header a {
+    text-decoration: none;
+}
+
+.section-header a:hover {
+    color: #fff;
+}
+
+.zm-actions-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    justify-content: center;
+    transition: all 0.5s;
+    background-color: rgba(23, 15, 35, 0.5);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: none;
+}
+
+.zm-actions-container i {
+    padding-top: 14px;
+}
