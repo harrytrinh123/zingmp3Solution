@@ -10,26 +10,23 @@ namespace zingmp3Solution.WebApp.Services
 {
     public class SongService : ISongService
     {
-        private readonly HttpClient _client;
-        public SongService(HttpClient client)
+        private readonly IHttpClientFactory _clientFactory;
+        public SongService(IHttpClientFactory clientFactory)
         {
-            _client = client;
+            _clientFactory = clientFactory;
         }
 
         public async Task<SongDto> Get(int songId)
         {
             string url = "https://localhost:44364/api/Songs/" + songId;
-            var httpResponse = await _client.GetAsync(url);
-
-            if (!httpResponse.IsSuccessStatusCode)
+            var client = _clientFactory.CreateClient();
+            HttpResponseMessage response = await client.GetAsync(url);
+            if(response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                throw new Exception("Cannot retrieve tasks");
+                var jsonString = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<SongDto>(jsonString);
             }
-
-            var content = await httpResponse.Content.ReadAsStringAsync();
-            var item = JsonConvert.DeserializeObject<SongDto>(content);
-
-            return item;
+            return null;
         }
     }
 }
