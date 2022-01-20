@@ -1,819 +1,481 @@
-﻿<div class="main">
-  <div class="container-fluid">
-    <div class="row">
-      <!-- Left Area -->
-      <div class="col-2 p-0">
-        <!-- Sidebar  -->
-        <div class="sidebar">
-          <nav class="navbar p-0">
-            <h1 class="heading">
-              <a href="#" class="navbar-brand">
-                <img class="logo" src="../assets/images/logo-dark.svg" alt="logo">
-              </a>
-            </h1>
-            <ul class="navbar-nav w-100">
-              <li class="nav-item">
-                <a href="./pesonal.html" class="nav-link">
-                  <i class="far fa-user-circle"></i>
-                  Cá nhân
-                </a>
-              </li>
-              <li class="nav-item active">
-                <a href="./discover.html" class="nav-link">
-                  <i class="fas fa-compact-disc"></i>
-                  Khám phá
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./zingchart.html" class="nav-link">
-                  <i class="fas fa-chart-line"></i>
-                  #zingchart
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-microphone-alt"></i>
-                  Radio
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./following.html" class="nav-link">
-                  <i class="far fa-list-alt"></i>
-                  Theo dõi
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="divide-line"></div>
-          <ul>
-
-          </ul>
-        </div>
+﻿<!-- Content -->
+<div class="content">
+  <div class="container chart-wrapper">
+    <div class="bg-blur"></div>
+    <div class="bg-alpha"></div>
+    <div class="bg-alpha-1"></div>
+    <div class="section-header">
+      <div class="chart-title">
+        <h3 class="title">#zingchart</h3>
+        <button>
+          <i class="fas fa-play"></i>
+        </button>
       </div>
-
-      <!-- Right Area -->
-      <div class="col-10 p-0 position-relative">
-        <!-- Header -->
-        <header class="header">
-          <div class="row h-100 w-100">
-            <div class="col-7 d-flex align-items-center justify-content-around header-left">
-              <a class="item" href="#"><i class="fas fa-arrow-left"></i></a>
-              <a class="item" href="#"><i class="fas fa-arrow-right"></i></a>
-              <div class="search-container">
-                <a href="#" class="item" id="search-item"><i class="fas fa-search"></i></a>
-                <input type="text" placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV..." id="input-search">
-                <a href="#" class="item" id="close-item"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="zm-chart-container">
+      <canvas id="myChart" width="400" height="100"></canvas>
+    </div>
+    <div class="list-song">
+      <div class="chart-song-item">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-1">
+                <span class="number is-center">1</span>
               </div>
-            </div>
-            <div class="col-2 p-0"></div>
-            <div class="col-3 p-0 header-right">
-              <div class="method h-100 d-flex justify-content-end">
-                <ul class="nav h-100 justify-content-around align-items-center">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link item">
-                      <i class="fas fa-tshirt"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link item">
-                      <i class="fas fa-upload"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link item">
-                      <i class="fas fa-cog"></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link item">
-                      <i class="fas fa-user"></i>
-                    </a>
-                  </li>
-                </ul>
+              <div class="col-md-1">
+                <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
+              </div>
+              <div class="col-md-1 song-thumb">
+                <figure>
+                  <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
+                </figure>
+                <div class="zm-actions-container">
+                  <button class="button">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-9 card-info">
+                <div class="title-wrapper">
+                  <span>Sầu tương tư</span>
+                </div>
+                <h3 class="subtitle">
+                  <a href="">Nhật Phong</a>
+                </h3>
               </div>
             </div>
           </div>
-        </header>
-
-        <!-- Content -->
-        <div class="content">
-          <div class="container chart-wrapper">
-            <div class="bg-blur"></div>
-            <div class="bg-alpha"></div>
-            <div class="bg-alpha-1"></div>
-            <div class="section-header">
-              <div class="chart-title">
-                <h3 class="title">#zingchart</h3>
-                <button>
-                  <i class="fas fa-play"></i>
+          <div class="col-md-6 media-right">
+            <div class="row">
+              <div class="col-md-8 song-duration">
+                4:14
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1">
+                <button class="button">
+                  <i class="z-icon fas fa-microphone-alt"></i>
+                </button>
+              </div>
+              <div class="col-md-1">
+                <button class="button">
+                  <i class="z-icon far fa-heart"></i>
+                </button>
+              </div>
+              <div class="col-md-1">
+                <button class="button">
+                  <i class="z-icon fas fa-ellipsis-h"></i>
                 </button>
               </div>
             </div>
-            <div class="zm-chart-container">
-              <canvas id="myChart" width="400" height="100"></canvas>
-            </div>
-            <div class="list-song">
-              <div class="chart-song-item">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="row">
-                      <div class="col-md-1">
-                        <span class="number is-center">1</span>
-                      </div>
-                      <div class="col-md-1">
-                        <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
-                      </div>
-                      <div class="col-md-1 song-thumb">
-                        <figure>
-                          <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
-                        </figure>
-                        <div class="zm-actions-container">
-                          <button class="button">
-                            <i class="fas fa-play"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-md-9 card-info">
-                        <div class="title-wrapper">
-                          <span>Sầu tương tư</span>
-                        </div>
-                        <h3 class="subtitle">
-                          <a href="">Nhật Phong</a>
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 media-right">
-                    <div class="row">
-                      <div class="col-md-8 song-duration">
-                        4:14
-                      </div>
-                      <div class="col-md-1"></div>
-                      <div class="col-md-1">
-                        <button class="button">
-                          <i class="z-icon fas fa-microphone-alt"></i>
-                        </button>
-                      </div>
-                      <div class="col-md-1">
-                        <button class="button">
-                          <i class="z-icon far fa-heart"></i>
-                        </button>
-                      </div>
-                      <div class="col-md-1">
-                        <button class="button">
-                          <i class="z-icon fas fa-ellipsis-h"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- second chart song -->
-              <div class="chart-song-item">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="row">
-                      <div class="col-md-1">
-                        <span class="number is-center">1</span>
-                      </div>
-                      <div class="col-md-1">
-                        <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
-                      </div>
-                      <div class="col-md-1 song-thumb">
-                        <figure>
-                          <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
-                        </figure>
-                        <div class="zm-actions-container">
-                          <button class="button">
-                            <i class="fas fa-play"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-md-9 card-info">
-                        <div class="title-wrapper">
-                          <span>Sầu tương tư</span>
-                        </div>
-                        <h3 class="subtitle">
-                          <a href="">Nhật Phong</a>
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 media-right">
-                    <div class="row">
-                      <div class="col-md-8 song-duration">
-                        4:14
-                      </div>
-                      <div class="col-md-1"></div>
-                      <div class="col-md-1">
-                        <button class="button">
-                          <i class="z-icon fas fa-microphone-alt"></i>
-                        </button>
-                      </div>
-                      <div class="col-md-1">
-                        <button class="button">
-                          <i class="z-icon far fa-heart"></i>
-                        </button>
-                      </div>
-                      <div class="col-md-1">
-                        <button class="button">
-                          <i class="z-icon fas fa-ellipsis-h"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- second chart song -->
-              <div class="chart-song-item">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="row">
-                      <div class="col-md-1">
-                        <span class="number is-center">1</span>
-                      </div>
-                      <div class="col-md-1">
-                        <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
-                      </div>
-                      <div class="col-md-1 song-thumb">
-                        <figure>
-                          <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
-                        </figure>
-                        <div class="zm-actions-container">
-                          <button class="button">
-                            <i class="fas fa-play"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-md-9 card-info">
-                        <div class="title-wrapper">
-                          <span>Sầu tương tư</span>
-                        </div>
-                        <h3 class="subtitle">
-                          <a href="">Nhật Phong</a>
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 media-right">
-                    <div class="row">
-                      <div class="col-md-8 song-duration">
-                        4:14
-                      </div>
-                      <div class="col-md-1"></div>
-                      <div class="col-md-1">
-                        <button class="button">
-                          <i class="z-icon fas fa-microphone-alt"></i>
-                        </button>
-                      </div>
-                      <div class="col-md-1">
-                        <button class="button">
-                          <i class="z-icon far fa-heart"></i>
-                        </button>
-                      </div>
-                      <div class="col-md-1">
-                        <button class="button">
-                          <i class="z-icon fas fa-ellipsis-h"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- TOP 100 -->
-            <div class="is-center">
-              <button class="show-all">Xem top 100</button>
-            </div>
-          </div>
-
-          <!-- Week chart section -->
-          <div class="container week-chart-section">
-            <div class="section-header">
-              <a href="" class="title">Bảng xếp hạng tuần</a>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="week-chart-box">
-                  <div class="box-header">
-                    <a href="">Việt Nam</a>
-                    <button class="button zm-btn"><i class=" fas fa-play"></i></button>
-                  </div>
-                  <div class="list">
-                    <div class="row top-song-item">
-                      <div class="col-1">
-                        <span class="number is-center">1</span>
-                      </div>
-                      <div class="col-1 gach-ngang">
-                        <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
-                      </div>
-                      <div class="col-1 song-thumb">
-                        <figure>
-                          <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
-                        </figure>
-                        <div class="zm-actions-container">
-                          <button class="button">
-                            <i class="fas fa-play"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-9 card-info">
-                        <div class="title-wrapper">
-                          <span>Sầu tương tư</span>
-                        </div>
-                        <h3 class="subtitle">
-                          <a href="">Nhật Phong</a>
-                        </h3>
-                      </div>
-                    </div>
-                    <!-- row -->
-                    <div class="row top-song-item">
-                      <div class="col-1">
-                        <span class="number is-center">1</span>
-                      </div>
-                      <div class="col-1 gach-ngang">
-                        <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
-                      </div>
-                      <div class="col-1 song-thumb">
-                        <figure>
-                          <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
-                        </figure>
-                        <div class="zm-actions-container">
-                          <button class="button">
-                            <i class="fas fa-play"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-9 card-info">
-                        <div class="title-wrapper">
-                          <span>Sầu tương tư</span>
-                        </div>
-                        <h3 class="subtitle">
-                          <a href="">Nhật Phong</a>
-                        </h3>
-                      </div>
-                    </div>
-                    <!-- row -->
-                    <div class="row top-song-item">
-                      <div class="col-1">
-                        <span class="number is-center">1</span>
-                      </div>
-                      <div class="col-1 gach-ngang">
-                        <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
-                      </div>
-                      <div class="col-1 song-thumb">
-                        <figure>
-                          <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
-                        </figure>
-                        <div class="zm-actions-container">
-                          <button class="button">
-                            <i class="fas fa-play"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-9 card-info">
-                        <div class="title-wrapper">
-                          <span>Sầu tương tư</span>
-                        </div>
-                        <h3 class="subtitle">
-                          <a href="">Nhật Phong</a>
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="is-center">
-                    <button class="show-all">Xem tất cả</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="week-chart-box">
-                  <div class="box-header">
-                    <a href="">Việt Nam</a>
-                    <button class="button zm-btn"><i class=" fas fa-play"></i></button>
-                  </div>
-                  <div class="list">
-                    <div class="row top-song-item">
-                      <div class="col-1">
-                        <span class="number is-center">1</span>
-                      </div>
-                      <div class="col-1 gach-ngang">
-                        <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
-                      </div>
-                      <div class="col-1 song-thumb">
-                        <figure>
-                          <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
-                        </figure>
-                        <div class="zm-actions-container">
-                          <button class="button">
-                            <i class="fas fa-play"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-9 card-info">
-                        <div class="title-wrapper">
-                          <span>Sầu tương tư</span>
-                        </div>
-                        <h3 class="subtitle">
-                          <a href="">Nhật Phong</a>
-                        </h3>
-                      </div>
-                    </div>
-                    <!-- row -->
-                    <div class="row top-song-item">
-                      <div class="col-1">
-                        <span class="number is-center">1</span>
-                      </div>
-                      <div class="col-1 gach-ngang">
-                        <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
-                      </div>
-                      <div class="col-1 song-thumb">
-                        <figure>
-                          <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
-                        </figure>
-                        <div class="zm-actions-container">
-                          <button class="button">
-                            <i class="fas fa-play"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-9 card-info">
-                        <div class="title-wrapper">
-                          <span>Sầu tương tư</span>
-                        </div>
-                        <h3 class="subtitle">
-                          <a href="">Nhật Phong</a>
-                        </h3>
-                      </div>
-                    </div>
-                    <!-- row -->
-                    <div class="row top-song-item">
-                      <div class="col-1">
-                        <span class="number is-center">1</span>
-                      </div>
-                      <div class="col-1 gach-ngang">
-                        <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
-                      </div>
-                      <div class="col-1 song-thumb">
-                        <figure>
-                          <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
-                        </figure>
-                        <div class="zm-actions-container">
-                          <button class="button">
-                            <i class="fas fa-play"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-9 card-info">
-                        <div class="title-wrapper">
-                          <span>Sầu tương tư</span>
-                        </div>
-                        <h3 class="subtitle">
-                          <a href="">Nhật Phong</a>
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="is-center">
-                    <button class="show-all">Xem tất cả</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="week-chart-box">
-                  <div class="box-header">
-                    <a href="">Việt Nam</a>
-                    <button class="button zm-btn"><i class=" fas fa-play"></i></button>
-                  </div>
-                  <div class="list">
-                    <div class="row top-song-item">
-                      <div class="col-1">
-                        <span class="number is-center">1</span>
-                      </div>
-                      <div class="col-1 gach-ngang">
-                        <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
-                      </div>
-                      <div class="col-1 song-thumb">
-                        <figure>
-                          <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
-                        </figure>
-                        <div class="zm-actions-container">
-                          <button class="button">
-                            <i class="fas fa-play"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-9 card-info">
-                        <div class="title-wrapper">
-                          <span>Sầu tương tư</span>
-                        </div>
-                        <h3 class="subtitle">
-                          <a href="">Nhật Phong</a>
-                        </h3>
-                      </div>
-                    </div>
-                    <!-- row -->
-                    <div class="row top-song-item">
-                      <div class="col-1">
-                        <span class="number is-center">1</span>
-                      </div>
-                      <div class="col-1 gach-ngang">
-                        <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
-                      </div>
-                      <div class="col-1 song-thumb">
-                        <figure>
-                          <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
-                        </figure>
-                        <div class="zm-actions-container">
-                          <button class="button">
-                            <i class="fas fa-play"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-9 card-info">
-                        <div class="title-wrapper">
-                          <span>Sầu tương tư</span>
-                        </div>
-                        <h3 class="subtitle">
-                          <a href="">Nhật Phong</a>
-                        </h3>
-                      </div>
-                    </div>
-                    <!-- row -->
-                    <div class="row top-song-item">
-                      <div class="col-1">
-                        <span class="number is-center">1</span>
-                      </div>
-                      <div class="col-1 gach-ngang">
-                        <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
-                      </div>
-                      <div class="col-1 song-thumb">
-                        <figure>
-                          <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
-                        </figure>
-                        <div class="zm-actions-container">
-                          <button class="button">
-                            <i class="fas fa-play"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-9 card-info">
-                        <div class="title-wrapper">
-                          <span>Sầu tương tư</span>
-                        </div>
-                        <h3 class="subtitle">
-                          <a href="">Nhật Phong</a>
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="is-center">
-                    <button class="show-all">Xem tất cả</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Playlist -->
-<div class="contain p-0 show">
-  <div class="blur">
-    <!-- Nav -->
-    <nav class="navbar navbar-expand-lg d-flex justify-content-center sticky-top">
-      <ul class="tab d-flex">
-        <li class="tab-item is-active"><span>Danh sách phát</span></li>
-        <li class="tab-item">Karaoke</li>
-        <li class="tab-item">Lời bài hát</li>
-      </ul>
-      <div class="tab-right d-flex">
-        <div class="level-icon">
-          <div class="btn icon-right">
-            <i class="icon-item fas fa-expand-alt" id="expand"></i>
-            <i class="icon-item fas fa-compress-alt" id="compress"></i>
-          </div>
-          <div class="btn icon-right"><i class="icon-item fas fa-cog"></i></div>
-          <div class="btn icon-right"><i class="icon-item fas fa-angle-down"></i></div>
-        </div>
-      </div>
-    </nav>
-    <!-- content -->
-    <div class="main-playlist">
-      <div class="play-list d-flex justify-content-center">
-        <div class="slide-show">
-          <div class="slides d-flex">
-            <div class="slide list-card-start mf-1">
-              <div class="btn btn-toggle-play playlist-icon" id="playButton" style="width: 300px; left: -135px;">
-              </div>
-              <img id="start" class="list-card-item not-active" src="../assets/images/playlist/avartar.jpg" alt="">
-              <div class="song-singer" style="margin-left:-50px;float: left;">
-                <span class="song" id="bh"></span> <br>
-                <span class="singer" id="cs"></span>
-              </div>
-            </div>
-            <div class="slide list-card">
-              <div class="btn btn-toggle-play playlist-icon playlist-not-active" id="playButton">
-              </div>
-              <img id="image-card" class="list-card-item not-active" src="../assets/images/playlist/avartar.jpg" alt=""
-                style="float: right;
-                        margin-right: 8px">
-              <div class="song-singer" style="margin-left: 42px;float: left;">
-                <span class="song" id="bh"></span> <br>
-                <span class="singer" id="cs"></span>
-              </div>
-            </div>
-            <div class="slide list-card" id="active-card">
-              <div class="btn btn-toggle-play playlist-icon playlist-active" id="playButton"></div>
-              <img id="play-pic" class="list-card-item active-image" src="" alt="">
-              <div class="song-singer">
-                <span class="song" id="bh"></span> <br>
-                <span class="singer" id="cs"></span>
-              </div>
-            </div>
-            <div class="slide list-card">
-              <div class="btn btn-toggle-play playlist-icon playlist-not-active" id="playButton"
-                style="margin-left: 35px;"></div>
-              <img id="image-card" class="list-card-item not-active" style="margin-left: 11px;"
-                src="../assets/images/playlist/avartar.jpg" alt="">
-              <div class="song-singer" style="margin-left: 42px;">
-                <span class="song" id="bh"></span> <br>
-                <span class="singer" id="cs"></span>
-              </div>
-            </div>
-            <div class="slide list-card list-card-end">
-              <div class="btn btn-toggle-play playlist-icon" id="playButton" style="width: 300px;margin-left: 60px;">
-              </div>
-              <img id="end" class="list-card-item not-active" src="../assets/images/playlist/avartar.jpg" alt="">
-              <div class="song-singer">
-                <span class="song" id="bh"></span> <br>
-                <span class="singer" id="cs"></span>
-              </div>
-            </div>
-
-          </div>
-          <div class="bar">
-            <div id="btn-pre" class="btn icon-right"><i class="fas fa-chevron-left"></i></div>
-            <div id="btn-next" class="btn icon-right"><i class="fas fa-chevron-right"></i></div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-<footer>
-  <nav class="navbar-expand-lg">
-    <div class="content-playlist d-flex">
-      <div class="head d-flex justify-content-start mt-3 ml-4">
-        <div class="media-left pr-2">
-          <figure class="image">
-            <img id="pic" src="" alt="">
-          </figure>
-        </div>
-        <div class="media-content ml-1 mt-2">
-          <div class="name-song">
-            <span>
-              <a href="" class="song text-white"></a>
-            </span>
-          </div>
-          <div class="name-singer">
-            <span>
-              <a href="" class="singer text-white" style="font-size: 12px;"></a>
-            </span>
-          </div>
-        </div>
-        <div class="media-right mt-3 ml-3">
-          <div class="btn btn-repeat" type="button"><i class="far fa-heart"></i></div>
-          <div class="btn"><i class="fas fa-ellipsis-h"></i></div>
-        </div>
-      </div>
-      <div class="between">
-        <div class="control d-flex justify-content-center">
-          <div class="btn btn-random">
-            <i class="btn-icon fas fa-random"></i>
-          </div>
-          <div class="btn btn-prev">
-            <i class="btn-icon fas fa-step-backward"></i>
-          </div>
-          <div class="btn btn-toggle-play" id="playButton">
-            <i class="icon playButton-icon far fa-play-circle"></i>
-            <i class="icon pauseButton-icon far fa-pause-circle"></i>
-          </div>
-          <div class="btn btn-next-playlist">
-            <i class="btn-icon fas fa-step-forward"></i>
-          </div>
-          <div class="btn btn-retweet">
-            <i class="btn-icon fas fa-retweet"></i>
-          </div>
-        </div>
-        <div class="time d-flex">
-          <span class="time-start">00:00</span>
-          <div class="audio-time">
-            <input id="progess" class="line-time" type="range" step="1" min="0" max="100" value="0">
-            <div class="line-progress" id="color-progress"></div>
-            <audio id="audio" src=""></audio>
-          </div>
-          <span class="time-end">00:00</span>
-        </div>
-      </div>
-      <div class="tail d-flex justify-content-end align-items-center">
-        <div class="icon-tail mv">
-          <img src="../assets/images/playlist/MV.png" alt="" width="20px" height="20px">
-        </div>
-        <div class="icon-tail karaoke">
-          <img src="../assets/images/playlist/karaoke.png" alt="" width="20px" height="20px">
-        </div>
-        <div class="icon-tail icon-volum">
-          <i class="fas fa-volume-up"></i>
-        </div>
-        <div class="icon-tail volum audio-time">
-          <input class="line-time" id="volum" type="range" min="0" max="100" step="1" value="1">
-        </div>
-        <div class="icon-tail expand">
-          <i id="expand" class="fas fa-expand-alt"></i>
-        </div>
-        <div class="icon-tail list-music">
-          <img src="../assets/images/playlist/list.png" alt="" width="20px" height="20px">
-        </div>
-      </div>
-    </div>
-  </nav>
-</footer>
-<!-- End playlist -->
 
-<!-- Modal -->
-<div class="modal fade" id="feed-detail-modal">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span style="color: aliceblue;" aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+      <!-- second chart song -->
+      <div class="chart-song-item">
         <div class="row">
-          <!-- album or video -->
-          <div class="col-md-6 feed-detail-album">
-            <img class="text-center" src="../assets/images/following/postdetailkimcuong.png" alt="">
-          </div>
-          <!-- comment -->
-          <div class="col-md-6 comment">
-            <div class="row comment-user">
-              <div class="col-md-2">
-                <div class="zm-card-image">
-                  <figure class="is-48x48">
-                    <img src="../assets/images/following/truongtuyen.jpg" alt="">
-                  </figure>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-1">
+                <span class="number is-center">1</span>
+              </div>
+              <div class="col-md-1">
+                <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
+              </div>
+              <div class="col-md-1 song-thumb">
+                <figure>
+                  <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
+                </figure>
+                <div class="zm-actions-container">
+                  <button class="button">
+                    <i class="fas fa-play"></i>
+                  </button>
                 </div>
               </div>
-              <div class="col-md-10">
-                <h3 class="name-user">
-                  <a href="">Saka Trương Tuyền</a>
-                  <span>•</span>
-                  <button class="button btn-quan-tam">
-                    <span>Quan tâm</span>
-                  </button>
+              <div class="col-md-9 card-info">
+                <div class="title-wrapper">
+                  <span>Sầu tương tư</span>
+                </div>
+                <h3 class="subtitle">
+                  <a href="">Nhật Phong</a>
                 </h3>
-                <a class="time-post" href="">14 tháng 7 lúc 17:40</a>
               </div>
             </div>
-            <div class="comment-hr"></div>
-            <div class="comment-title">
-              Em không giàu sang đi với anh trong cuộc đời
-            </div>
-            <div class="comment-hr"></div>
-            <div class="comment-actions">
-              <button class="button zm-btn">
-                <i class="far fa-heart"></i>
-                <span>24</span>
-              </button>
-              <button class="button zm-btn">
-                <i class="fas fa-share"></i>
-                <span>Chia sẻ</span>
-              </button>
-            </div>
-            <div class="comment-hr"></div>
-            <div class="count-like">
-              <span>1 lượt thích</span>
-            </div>
-            <div class="comment-content">
-              <div class="empty-content">
-                <i class="far fa-comment"></i>
-                <span>Chưa có bình luận nào</span>
+          </div>
+          <div class="col-md-6 media-right">
+            <div class="row">
+              <div class="col-md-8 song-duration">
+                4:14
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1">
+                <button class="button">
+                  <i class="z-icon fas fa-microphone-alt"></i>
+                </button>
+              </div>
+              <div class="col-md-1">
+                <button class="button">
+                  <i class="z-icon far fa-heart"></i>
+                </button>
+              </div>
+              <div class="col-md-1">
+                <button class="button">
+                  <i class="z-icon fas fa-ellipsis-h"></i>
+                </button>
               </div>
             </div>
-            <div class="noti-message">
-              <i class="fas fa-info"></i>
-              <span> &ensp; Vào ứng dụng Zing MP3 để bình luận</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- second chart song -->
+      <div class="chart-song-item">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-1">
+                <span class="number is-center">1</span>
+              </div>
+              <div class="col-md-1">
+                <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
+              </div>
+              <div class="col-md-1 song-thumb">
+                <figure>
+                  <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
+                </figure>
+                <div class="zm-actions-container">
+                  <button class="button">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-9 card-info">
+                <div class="title-wrapper">
+                  <span>Sầu tương tư</span>
+                </div>
+                <h3 class="subtitle">
+                  <a href="">Nhật Phong</a>
+                </h3>
+              </div>
             </div>
+          </div>
+          <div class="col-md-6 media-right">
+            <div class="row">
+              <div class="col-md-8 song-duration">
+                4:14
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1">
+                <button class="button">
+                  <i class="z-icon fas fa-microphone-alt"></i>
+                </button>
+              </div>
+              <div class="col-md-1">
+                <button class="button">
+                  <i class="z-icon far fa-heart"></i>
+                </button>
+              </div>
+              <div class="col-md-1">
+                <button class="button">
+                  <i class="z-icon fas fa-ellipsis-h"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TOP 100 -->
+    <div class="is-center">
+      <button class="show-all">Xem top 100</button>
+    </div>
+  </div>
+
+  <!-- Week chart section -->
+  <div class="container week-chart-section">
+    <div class="section-header">
+      <a href="" class="title">Bảng xếp hạng tuần</a>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="week-chart-box">
+          <div class="box-header">
+            <a href="">Việt Nam</a>
+            <button class="button zm-btn"><i class=" fas fa-play"></i></button>
+          </div>
+          <div class="list">
+            <div class="row top-song-item">
+              <div class="col-1">
+                <span class="number is-center">1</span>
+              </div>
+              <div class="col-1 gach-ngang">
+                <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
+              </div>
+              <div class="col-1 song-thumb">
+                <figure>
+                  <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
+                </figure>
+                <div class="zm-actions-container">
+                  <button class="button">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-9 card-info">
+                <div class="title-wrapper">
+                  <span>Sầu tương tư</span>
+                </div>
+                <h3 class="subtitle">
+                  <a href="">Nhật Phong</a>
+                </h3>
+              </div>
+            </div>
+            <!-- row -->
+            <div class="row top-song-item">
+              <div class="col-1">
+                <span class="number is-center">1</span>
+              </div>
+              <div class="col-1 gach-ngang">
+                <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
+              </div>
+              <div class="col-1 song-thumb">
+                <figure>
+                  <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
+                </figure>
+                <div class="zm-actions-container">
+                  <button class="button">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-9 card-info">
+                <div class="title-wrapper">
+                  <span>Sầu tương tư</span>
+                </div>
+                <h3 class="subtitle">
+                  <a href="">Nhật Phong</a>
+                </h3>
+              </div>
+            </div>
+            <!-- row -->
+            <div class="row top-song-item">
+              <div class="col-1">
+                <span class="number is-center">1</span>
+              </div>
+              <div class="col-1 gach-ngang">
+                <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
+              </div>
+              <div class="col-1 song-thumb">
+                <figure>
+                  <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
+                </figure>
+                <div class="zm-actions-container">
+                  <button class="button">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-9 card-info">
+                <div class="title-wrapper">
+                  <span>Sầu tương tư</span>
+                </div>
+                <h3 class="subtitle">
+                  <a href="">Nhật Phong</a>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="is-center">
+            <button class="show-all">Xem tất cả</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="week-chart-box">
+          <div class="box-header">
+            <a href="">Việt Nam</a>
+            <button class="button zm-btn"><i class=" fas fa-play"></i></button>
+          </div>
+          <div class="list">
+            <div class="row top-song-item">
+              <div class="col-1">
+                <span class="number is-center">1</span>
+              </div>
+              <div class="col-1 gach-ngang">
+                <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
+              </div>
+              <div class="col-1 song-thumb">
+                <figure>
+                  <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
+                </figure>
+                <div class="zm-actions-container">
+                  <button class="button">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-9 card-info">
+                <div class="title-wrapper">
+                  <span>Sầu tương tư</span>
+                </div>
+                <h3 class="subtitle">
+                  <a href="">Nhật Phong</a>
+                </h3>
+              </div>
+            </div>
+            <!-- row -->
+            <div class="row top-song-item">
+              <div class="col-1">
+                <span class="number is-center">1</span>
+              </div>
+              <div class="col-1 gach-ngang">
+                <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
+              </div>
+              <div class="col-1 song-thumb">
+                <figure>
+                  <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
+                </figure>
+                <div class="zm-actions-container">
+                  <button class="button">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-9 card-info">
+                <div class="title-wrapper">
+                  <span>Sầu tương tư</span>
+                </div>
+                <h3 class="subtitle">
+                  <a href="">Nhật Phong</a>
+                </h3>
+              </div>
+            </div>
+            <!-- row -->
+            <div class="row top-song-item">
+              <div class="col-1">
+                <span class="number is-center">1</span>
+              </div>
+              <div class="col-1 gach-ngang">
+                <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
+              </div>
+              <div class="col-1 song-thumb">
+                <figure>
+                  <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
+                </figure>
+                <div class="zm-actions-container">
+                  <button class="button">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-9 card-info">
+                <div class="title-wrapper">
+                  <span>Sầu tương tư</span>
+                </div>
+                <h3 class="subtitle">
+                  <a href="">Nhật Phong</a>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="is-center">
+            <button class="show-all">Xem tất cả</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="week-chart-box">
+          <div class="box-header">
+            <a href="">Việt Nam</a>
+            <button class="button zm-btn"><i class=" fas fa-play"></i></button>
+          </div>
+          <div class="list">
+            <div class="row top-song-item">
+              <div class="col-1">
+                <span class="number is-center">1</span>
+              </div>
+              <div class="col-1 gach-ngang">
+                <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
+              </div>
+              <div class="col-1 song-thumb">
+                <figure>
+                  <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
+                </figure>
+                <div class="zm-actions-container">
+                  <button class="button">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-9 card-info">
+                <div class="title-wrapper">
+                  <span>Sầu tương tư</span>
+                </div>
+                <h3 class="subtitle">
+                  <a href="">Nhật Phong</a>
+                </h3>
+              </div>
+            </div>
+            <!-- row -->
+            <div class="row top-song-item">
+              <div class="col-1">
+                <span class="number is-center">1</span>
+              </div>
+              <div class="col-1 gach-ngang">
+                <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
+              </div>
+              <div class="col-1 song-thumb">
+                <figure>
+                  <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
+                </figure>
+                <div class="zm-actions-container">
+                  <button class="button">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-9 card-info">
+                <div class="title-wrapper">
+                  <span>Sầu tương tư</span>
+                </div>
+                <h3 class="subtitle">
+                  <a href="">Nhật Phong</a>
+                </h3>
+              </div>
+            </div>
+            <!-- row -->
+            <div class="row top-song-item">
+              <div class="col-1">
+                <span class="number is-center">1</span>
+              </div>
+              <div class="col-1 gach-ngang">
+                <i class="is-center z-icon ic-balance fas fa-window-minimize"></i>
+              </div>
+              <div class="col-1 song-thumb">
+                <figure>
+                  <img class="is-40x40" src="../assets/images/zingchart/sautuongtu.jpg" alt="">
+                </figure>
+                <div class="zm-actions-container">
+                  <button class="button">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-9 card-info">
+                <div class="title-wrapper">
+                  <span>Sầu tương tư</span>
+                </div>
+                <h3 class="subtitle">
+                  <a href="">Nhật Phong</a>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="is-center">
+            <button class="show-all">Xem tất cả</button>
           </div>
         </div>
       </div>
