@@ -43,9 +43,9 @@ namespace zingmp3Solution.Application.Catalog.Singers
             }
         }
 
-        public async Task<SingerDto> EditSinger(SingerDto singer)
+        public async Task<SingerDto> EditSinger(int id, SingerEdit singer)
         {
-            var singerCurrent = await _context.Singers.FindAsync(singer.id);
+            var singerCurrent = await _context.Singers.FindAsync(id);
             if(singerCurrent != null)
             {
                 singerCurrent.Dob = singer.Dob;
@@ -57,7 +57,15 @@ namespace zingmp3Solution.Application.Catalog.Singers
                 _context.Update(singerCurrent);
                 await _context.SaveChangesAsync();
             }
-            return singer;
+            return new SingerDto() { 
+                id = singerCurrent.Id,
+                Dob = singerCurrent.Dob,
+                Sex = singerCurrent.Sex,
+                Avatar = singerCurrent.Avatar,
+                FullName = singerCurrent.FullName,
+                StageName = singerCurrent.StageName,
+                Introduction = singerCurrent.Introduction,
+            };
         }
 
         public async Task<List<Singer>> GetSinger()

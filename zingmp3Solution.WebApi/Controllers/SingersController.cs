@@ -54,13 +54,13 @@ namespace zingmp3Solution.WebApi.Controllers
 
         [HttpPatch]
         [Route("/api/[controller]/{id}")]
-        public async Task<IActionResult> EditSinger(int id, SingerDto singer)
+        public async Task<IActionResult> EditSinger(int id, SingerEdit singer)
         {
             var singerCurrent = _singer.GetSingerByID(id);
             if(singerCurrent != null)
             {
-                singer.id = singerCurrent.Id;
-                await _singer.EditSinger(singer);
+                id = singerCurrent.Id;
+                await _singer.EditSinger(id, singer);
             }
 
             return Ok(singer);
