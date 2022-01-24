@@ -28,5 +28,31 @@ namespace zingmp3Solution.Web.Services
             }
             return null;
         }
+
+        public async Task<List<SongDto>> GetTop10ZingChart()
+        {
+            var url = "https://localhost:44364/api/Songs/top10zingchart";
+            HttpClient client = _clientFactory.CreateClient();
+            HttpResponseMessage response = await client.GetAsync(url);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<SongDto>>(jsonString);
+            }
+            return null;
+        }
+
+        public async Task<List<SongDto>> GetTop5Cat(int categoryId)
+        {
+            var url = "https://localhost:44364/api/Songs/categories/top5/" + categoryId;
+            HttpClient client = _clientFactory.CreateClient();
+            HttpResponseMessage response = await client.GetAsync(url);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<SongDto>>(jsonString);
+            }
+            return null;
+        }
     }
 }

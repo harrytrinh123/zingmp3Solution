@@ -70,6 +70,12 @@
 
 .card-info {
     padding-left: 25px;
+    max-width: 270px;
+    padding-left: 20px;
+}
+
+.card-info-bxh {
+    padding-left: 25px;
     max-width: 200px;
     padding-left: 20px;
 }
