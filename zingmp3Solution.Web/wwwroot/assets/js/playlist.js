@@ -1,4 +1,12 @@
 $(document).ready(() => {
+    $( ".chart-song-item" ).each(function(index) {
+        $(this).on("click", function(){
+            var res = $(this).children()[0].value;
+            $('#audio').attr("src", "https://localhost:44364/songs/" + res);
+            $('#audio').play();
+        });
+    });
+
     const heading = $('.song');
     const image = $('#pic');
     const playPic = $('#play-pic')

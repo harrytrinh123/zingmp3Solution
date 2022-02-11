@@ -52,6 +52,7 @@ namespace zingmp3Solution.WebApi
             services.AddScoped<ICommentsService, CommentsService>();
             services.AddTransient<IPostService, PostService>();
             services.AddTransient<IStorageService, FileStorageService>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +63,7 @@ namespace zingmp3Solution.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
 
             app.UseRouting();
