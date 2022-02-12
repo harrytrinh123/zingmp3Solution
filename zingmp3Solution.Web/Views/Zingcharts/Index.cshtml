@@ -22,7 +22,7 @@
         foreach (var song in ViewBag.Top10ZingChart)
         {
           <div class="chart-song-item">
-            <input type="hidden" value="@song.SongUrl">
+            <input type="hidden" value="@song.Id">
             <div class="row">
               <div class="col-md-6">
                 <div class="row">
@@ -107,6 +107,7 @@
               foreach (var song in ViewBag.Top5Cat1)
               {
                 <div class="row top-song-item">
+                  <input type="hidden" value="@song.Id">
                   <div class="col-1">
                     <span class="number is-center">@(c1++)</span>
                   </div>
@@ -154,6 +155,7 @@
               foreach (var song in ViewBag.Top5Cat2)
               {
                 <div class="row top-song-item">
+                  <input type="hidden" value="@song.Id">
                   <div class="col-1">
                     <span class="number is-center">@(c2++)</span>
                   </div>
@@ -200,6 +202,7 @@
               foreach (var song in ViewBag.Top5Cat3)
               {
                 <div class="row top-song-item">
+                  <input type="hidden" value="@song.Id">
                   <div class="col-1">
                     <span class="number is-center">@(c3++)</span>
                   </div>
