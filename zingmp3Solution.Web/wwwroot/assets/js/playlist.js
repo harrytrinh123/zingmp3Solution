@@ -1,12 +1,4 @@
 $(document).ready(() => {
-    $( ".chart-song-item" ).each(function(index) {
-        $(this).on("click", function(){
-            var res = $(this).children()[0].value;
-            $('#audio').attr("src", "https://localhost:44364/songs/" + res);
-            $('#audio').play();
-        });
-    });
-
     const heading = $('.song');
     const image = $('#pic');
     const playPic = $('#play-pic')
@@ -18,6 +10,44 @@ $(document).ready(() => {
     var lineProgess = document.getElementById('color-progress')
     var audio = document.getElementById('audio')
     var playing = false;
+
+    async function getSongFetch(id) {
+        var url = "https://localhost:44364/api/Songs/" + id;
+        try {
+            let res = await fetch(url);
+            return await res.json();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    $( ".chart-song-item" ).each(function(index) {
+        $(this).on("click", function(){
+            var id = $(this).children()[0].value;
+            getSongFetch(id).then(function(val) {
+                $('#audio').attr("src", "https://localhost:44364/songs/" + val.songUrl);
+                image.attr("src", val.songImage);
+                heading.html(val.name);
+                singer.html(val.singersString);
+                playing = true;
+                playBtn.click();
+            });   
+        });
+    });
+
+    $( ".top-song-item" ).each(function(index) {
+        $(this).on("click", function(){
+            var id = $(this).children()[0].value;
+            getSongFetch(id).then(function(val) {
+                $('#audio').attr("src", "https://localhost:44364/songs/" + val.songUrl);
+                image.attr("src", val.songImage);
+                heading.html(val.name);
+                singer.html(val.singersString);
+                playing = true;
+                playBtn.click();
+            });   
+        });
+    });
+
 
     const app = {
         currentIndex: 0,
